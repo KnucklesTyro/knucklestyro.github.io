@@ -7,9 +7,11 @@
 
   <!-- SEO -->
   <title>Validador e Gerador de CPF e CNPJ Online</title>
-  <meta name="description" content="Valide e gere números de CPF e CNPJ de forma rápida e gratuita. Ferramenta online simples e confiável.">
-  <meta name="keywords" content="cpf, cnpj, validador cpf, gerador cpf, validar cnpj, gerar cnpj, documento, brasil">
+  <meta name="description" content="Gere e valide CPF ou CNPJ online de forma rápida e gratuita. Ferramenta simples, segura e sem necessidade de cadastro.">
+  <meta name="keywords" content="cpf, cnpj, validador cpf, gerador cpf, validar cnpj, gerar cnpj, documento, brasil, cpf válido, cnpj válido">
   <meta name="author" content="KnucklesTyro">
+  <meta name="robots" content="index, follow">
+
 
   <!-- Open Graph (para redes sociais) -->
   <meta property="og:title" content="Validador e Gerador de CPF e CNPJ Online">
@@ -72,6 +74,42 @@
 		min-height: 600px; /* ou um valor adequado ao conteúdo */
 	}
 
+	.result-box {
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+	  margin-top: 10px;
+	  justify-content: center;
+	}
+
+	.copy-btn {
+	  background: #4caf50;
+	  color: white;
+	  border: none;
+	  padding: 6px 12px;
+	  border-radius: 6px;
+	  cursor: pointer;
+	  font-size: 14px;
+	  transition: background 0.3s;
+	  justify-content: center;
+	}
+
+	.copy-btn:hover {
+	  background: #45a049;
+	}
+
+	.copy-msgCPF {
+	  font-size: 12px;
+	  color: #4caf50;
+	  font-weight: bold;
+	}
+
+	.copy-msgCNPJ {
+	  font-size: 12px;
+	  color: #4caf50;
+	  font-weight: bold;
+	}
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f6f9;
@@ -105,6 +143,13 @@
       margin-bottom: 20px;
       color: #333;
     }
+	h2	{
+      text-align: center;
+      margin-bottom: 10px;
+      color: #007bff;
+	  font-size: 14px;
+    }
+	
     .menu {
       display: flex;
       justify-content: center;
@@ -192,6 +237,9 @@
     <!-- Conteúdo principal -->
     <div class="container">
       <h1>Validador / Gerador de CPF e CNPJ</h1>
+	  <br>
+	  <h2><i>Nosso gerador e validador de CPF e CNPJ é gratuito e pode ser usado para testes em sistemas, cadastros e estudos.</i></h2>
+	  <br>
       <div class="menu">
         <button id="cpfBtn" class="active" onclick="switchMode('cpf')">CPF</button>
         <button id="cnpjBtn" class="inactive" onclick="switchMode('cnpj')">CNPJ</button>
@@ -220,7 +268,11 @@
         <div style="text-align:center; margin-top:10px;">
           <button onclick="generateCPF()">Gerar CPF</button>
         </div>
-        <div id="cpfGenerated" class="result"></div>
+		<div id="cpfGenerated" class="result"></div>	
+		<div class="result-box">
+		  <button class="copy-btn" onclick="copiarTextoCPF()">📋 Copiar</button>
+		  <span id="copy-msgCPF" class="copy-msgCPF"></span>
+		</div>
       </div>
 
       <!-- Área CNPJ -->
@@ -247,6 +299,10 @@
           <button onclick="generateCNPJ()">Gerar CNPJ</button>
         </div>
         <div id="cnpjGenerated" class="result"></div>
+		<div class="result-box">
+		  <button class="copy-btn" onclick="copiarTextoCNPJ()">📋 Copiar</button>
+		  <span id="copy-msgCNPJ" class="copy-msgCNPJ"></span>
+		</div>
       </div>
 
       <!-- Anúncio abaixo do conteúdo -->
@@ -291,6 +347,26 @@
         document.getElementById("cpfBtn").classList.add("inactive");
       }
     }
+	
+	// Copiar CPF 
+	function copiarTextoCPF() {
+	  const texto = document.getElementById("cpfGenerated").innerText;
+	  navigator.clipboard.writeText(texto).then(() => {
+		const msg = document.getElementById("copy-msgCPF");
+		msg.innerText = "Copiado ✅";
+		setTimeout(() => msg.innerText = "", 2000);
+	  });
+	}
+	
+	// Copiar CNPJ 
+	function copiarTextoCNPJ() {
+	  const texto = document.getElementById("cnpjGenerated").innerText;
+	  navigator.clipboard.writeText(texto).then(() => {
+		const msg = document.getElementById("copy-msgCNPJ");
+		msg.innerText = "Copiado ✅";
+		setTimeout(() => msg.innerText = "", 2000);
+	  });
+	}
 
     // ===== CPF =====
     function validateCPF() {
@@ -341,8 +417,10 @@
       let format = document.querySelector("input[name='cpfFormat']:checked").value;
       if (format === "pontuado")
         cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-
-      document.getElementById("cpfGenerated").innerHTML = "<div>CPF Gerado!</div><div class='generated'>" + cpf + "</div>";
+	
+	 
+      document.getElementById("cpfGenerated").innerHTML = "<div class='generated'>" + cpf + "</div>";
+	  
     }
 
     // ===== CNPJ =====
@@ -412,7 +490,7 @@
       if (format === "pontuado")
         cnpj = cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
 
-      document.getElementById("cnpjGenerated").innerHTML = "<div>CNPJ Gerado!</div><div class='generated'>" + cnpj + "</div>";
+      document.getElementById("cnpjGenerated").innerHTML = "<div class='generated'>" + cnpj + "</div>";
     }
   </script>
 </body>
