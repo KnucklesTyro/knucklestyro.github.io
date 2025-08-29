@@ -219,6 +219,74 @@
       margin: 20px auto;
       text-align: center;
     }
+	
+	
+  /* ==== Bloco Medium CTA (isolado) ==== */
+
+  .medium-cta {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .medium-cta__card {
+    width: 100%;
+    max-width: 700px; /* mantém a largura alinhada ao seu container principal */
+    background: #ffffff;
+    border: 1px solid #e6e8ec;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .medium-cta__title {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .medium-cta__text {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .medium-cta__button {
+    white-space: nowrap;
+    text-decoration: none;
+    background: #000;          /* cor do Medium */
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #000;
+    transition: transform .06s ease, opacity .2s ease;
+  }
+
+  .medium-cta__button:hover { opacity: 0.9; }
+
+  .medium-cta__button:active { transform: translateY(1px); }
+
+  /* Responsivo: empilha no mobile */
+
+  @media (max-width: 520px) {
+
+    .medium-cta__card {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .medium-cta__button {
+      justify-self: start;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -304,6 +372,40 @@
 		  <span id="copy-msgCNPJ" class="copy-msgCNPJ"></span>
 		</div>
       </div>
+	  
+	
+		<!-- Bloco: Assinar o Substack -->
+		
+		<div style="text-align: center; background: #FFF; margin: 40px 0; padding: 20px; border: 2px solid #ddd; border-radius: 12px;">
+		  <h3>📩 Receba novidades por e-mail</h3>
+		  <p>Assine nossa newsletter no Substack e fique por dentro das atualizações.</p>
+		  <a href="https://knucklestyro.substack.com" target="_blank" 
+			 style="display: inline-block; background: #ff6719; color: white; padding: 10px 20px; 
+					border-radius: 8px; text-decoration: none; font-weight: bold;">
+			Assinar no Substack
+		  </a>
+		</div>
+		
+		<!-- Bloco: link para o artigo no Medium -->
+		<section class="medium-cta">
+		  <div class="medium-cta__card">
+			<div class="medium-cta__content">
+			  <h2 class="medium-cta__title">Saiba mais no Medium</h2>
+			  <p class="medium-cta__text">
+				Entenda como funciona a validação e geração de CPF/CNPJ e veja exemplos de uso prático.
+			  </p>
+			</div>
+			<a
+			  class="medium-cta__button"
+			  href="https://medium.com/@knuckles.tyro/gerador-e-validador-de-cpf-e-cnpj-online-r%C3%A1pido-simples-e-gr%C3%A1tis-2453d8476547"
+			  target="_blank"
+			  rel="noopener noreferrer"
+			  aria-label="Ler o artigo no Medium em nova aba"
+			>
+			  Ler o artigo ↗
+			</a>
+		  </div>
+		</section>
 
       <!-- Anúncio abaixo do conteúdo -->
       <div class="ads-horizontal">
