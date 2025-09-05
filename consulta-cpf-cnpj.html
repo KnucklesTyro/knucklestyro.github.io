@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Validador e Gerador de CPF e CNPJ Online</title>
+  <meta name="description" content="Valide e gere números de CPF e CNPJ de forma rápida e gratuita. Ferramenta online simples e confiável.">
+  <meta name="keywords" content="cpf, cnpj, validador cpf, gerador cpf, validar cnpj, gerar cnpj, documento, brasil">
+  <meta name="author" content="KnucklesTyro">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Validador e Gerador de CPF e CNPJ Online">
+  <meta property="og:description" content="Ferramenta gratuita para validar e gerar CPF e CNPJ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://utilidigital.com.br/consulta-cpf-cnpj.html">
+  <meta property="og:image" content="https://utilidigital.com.br/images/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <link rel="stylesheet" href="./css/style.css"> 
+  <script src="./js/script.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ENPY20Q61N');
+  </script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Anúncio lateral esquerdo -->
+    <div class="ads-vertical">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="1111111111"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+	  <img src="./images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
+      <h1>Validador / Gerador de CPF e CNPJ</h1>
+      <div class="menu">
+        <button id="cpfBtn" class="active" onclick="switchMode('cpf')">CPF</button>
+        <button id="cnpjBtn" class="inactive" onclick="switchMode('cnpj')">CNPJ</button>
+      </div>
+
+      <!-- Área CPF -->
+      <div id="cpfSection" class="box">
+        <label>Digite o CPF:</label>
+        <div class="inline">
+          <input type="text" id="cpfInput" maxlength="14" placeholder="Somente números">
+          <button onclick="validateCPF()">Validar</button>
+        </div>
+        <div id="cpfResult" class="result"></div>
+        <hr>
+        <label>Gerar CPF:</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="cpfFormat" value="pontuado" checked>
+            <span>Gerar com pontuação</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="cpfFormat" value="limpo">
+            <span>Gerar sem pontuação</span>
+          </label>
+        </div>
+        <div style="text-align:center; margin-top:10px;">
+          <button onclick="generateCPF()">Gerar CPF</button>
+        </div>
+        <div id="cpfGenerated" class="result"></div>
+      </div>
+
+      <!-- Área CNPJ -->
+      <div id="cnpjSection" class="box" style="display:none;">
+        <label>Digite o CNPJ:</label>
+        <div class="inline">
+          <input type="text" id="cnpjInput" maxlength="18" placeholder="Somente números">
+          <button onclick="validateCNPJ()">Validar</button>
+        </div>
+        <div id="cnpjResult" class="result"></div>
+        <hr>
+        <label>Gerar CNPJ:</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="cnpjFormat" value="pontuado" checked>
+            <span>Gerar com pontuação</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="cnpjFormat" value="limpo">
+            <span>Gerar sem pontuação</span>
+          </label>
+        </div>
+        <div style="text-align:center; margin-top:10px;">
+          <button onclick="generateCNPJ()">Gerar CNPJ</button>
+        </div>
+        <div id="cnpjGenerated" class="result"></div>
+      </div>
+
+      <!-- Anúncio abaixo -->
+      <div class="ads-horizontal">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+          data-ad-slot="3333333333"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <!-- Anúncio lateral direito -->
+    <div class="ads-vertical">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="2222222222"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+</body>
+</html>
