@@ -1,4 +1,4 @@
-User-agent: *
+ser-agent: *
 Allow: /
 
-Sitemap: https://knucklestyro.github.io/sitemap.xml
+Sitemap: https://utilidigital.com.br/sitemap.xml

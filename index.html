@@ -1,599 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UtiliDigital - Ferramentas Digitais Úteis</title>
+  <meta name="description" content="UtiliDigital é uma plataforma de ferramentas digitais práticas e gratuitas, como validador e gerador de CPF e CNPJ.">
 
-  <!-- SEO -->
-  <title>Validador e Gerador de CPF e CNPJ Online</title>
-  <meta name="description" content="Gere e valide CPF ou CNPJ online de forma rápida e gratuita. Ferramenta simples, segura e sem necessidade de cadastro.">
-  <meta name="keywords" content="cpf, cnpj, validador cpf, gerador cpf, validar cnpj, gerar cnpj, documento, brasil, cpf válido, cnpj válido">
-  <meta name="author" content="KnucklesTyro">
-  <meta name="robots" content="index, follow">
-
-
-  <!-- Open Graph (para redes sociais) -->
-  <meta property="og:title" content="Validador e Gerador de CPF e CNPJ Online">
-  <meta property="og:description" content="Ferramenta gratuita para validar e gerar CPF e CNPJ.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="UtiliDigital - Ferramentas Digitais Úteis">
+  <meta property="og:description" content="Acesse ferramentas digitais gratuitas como validador e gerador de CPF e CNPJ.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://seudominio.com">
-  <meta property="og:image" content="https://seudominio.com/imagem_preview.png">
+  <meta property="og:url" content="https://utilidigital.com.br/">
+  <meta property="og:image" content="https://utilidigital.com.br/images/logo.png">
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UtiliDigital - Ferramentas Digitais Úteis">
+  <meta name="twitter:description" content="Valide e gere CPF e CNPJ grátis na UtiliDigital.">
+  <meta name="twitter:image" content="https://utilidigital.com.br/images/logo.png">
 
-	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-	<script defer>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-ENPY20Q61N');
-	</script>
-	
-	<!-- Google AdSense -->
-	 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6490162172128434"
-     crossorigin="anonymous"></script>
   
-  <style>
-	.radio-group {
-		display: flex;
-		justify-content: center;
-		gap: 15px;
-		margin-top: 15px;
-		flex-wrap: wrap;
-	}
-	.radio-option {
-		background: #DDD;
-		border: 2px solid #DDD;
-		border-radius: 8px;
-		padding: 8px 15px;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		font-weight: bold;
-		color: #f4f6f9;
-		display: flex;
-		align-items: center;
-		gap: 8px;
-	}
-	.radio-option input { display: none; }
-	.radio-option span { font-size: 14px; }
-	.radio-option:hover {
-		background: #00DDff;
-		border: 2px solid #00DDff;
-		color: #000;
-	}
-	.radio-option:has(input:checked) {
-		background: #0077ff;
-		border: 2px solid #0077ff;
-		color: #fff;
-	}
-	
-	.wrapper {
-		min-height: 600px; /* ou um valor adequado ao conteúdo */
-	}
+  <link rel="stylesheet" href="css/style.css"> 
+  <script src="js/script.js"></script>
 
-	.result-box {
-	  display: flex;
-	  align-items: center;
-	  gap: 10px;
-	  margin-top: 10px;
-	  justify-content: center;
-	}
-
-	.copy-btn {
-	  background: #4caf50;
-	  color: white;
-	  border: none;
-	  padding: 6px 12px;
-	  border-radius: 6px;
-	  cursor: pointer;
-	  font-size: 14px;
-	  transition: background 0.3s;
-	  justify-content: center;
-	}
-
-	.copy-btn:hover {
-	  background: #45a049;
-	}
-
-	.copy-msgCPF {
-	  font-size: 12px;
-	  color: #4caf50;
-	  font-weight: bold;
-	}
-
-	.copy-msgCNPJ {
-	  font-size: 12px;
-	  color: #4caf50;
-	  font-weight: bold;
-	}
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f9;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 700px;
-      padding: 20px;
-    }
-
-    .ads-vertical {
-      width: 160px;
-      min-height: 600px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-	h2	{
-      text-align: center;
-      margin-bottom: 10px;
-      color: #007bff;
-	  font-size: 14px;
-    }
-	
-    .menu {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .menu button {
-      flex: 1;
-      padding: 12px;
-      margin: 0 5px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .menu button.active { background-color: #007bff; color: white; }
-    .menu button.inactive { background-color: #e9ecef; color: #333; }
-    .box {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-    label { font-weight: bold; display: block; margin-bottom: 8px; }
-    input {
-      width: calc(100% - 100px);
-      padding: 10px;
-      margin-right: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    button {
-      padding: 10px 15px;
-      border: none;
-      background-color: #007bff;
-      color: white;
-      font-size: 14px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #0056b3; }
-    .inline { display: flex; align-items: center; }
-    .result {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 16px;
-    }
-    .valid { color: green; font-weight: bold; }
-    .invalid { color: red; font-weight: bold; }
-    .generated {
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 10px;
-      color: #333;
-    }
-    .options {
-      margin-top: 10px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .ads-horizontal {
-      margin: 20px auto;
-      text-align: center;
-    }
-	
-	
-  /* ==== Bloco Medium CTA (isolado) ==== */
-
-  .medium-cta {
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-  }
-
-  .medium-cta__card {
-    width: 100%;
-    max-width: 700px; /* mantém a largura alinhada ao seu container principal */
-    background: #ffffff;
-    border: 1px solid #e6e8ec;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    padding: 16px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .medium-cta__title {
-    margin: 0 0 6px 0;
-    font-size: 18px;
-    color: #333;
-  }
-
-  .medium-cta__text {
-    margin: 0;
-    font-size: 14px;
-    color: #555;
-    line-height: 1.4;
-  }
-
-  .medium-cta__button {
-    white-space: nowrap;
-    text-decoration: none;
-    background: #000;          /* cor do Medium */
-    color: #fff;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    border: 1px solid #000;
-    transition: transform .06s ease, opacity .2s ease;
-  }
-
-  .medium-cta__button:hover { opacity: 0.9; }
-
-  .medium-cta__button:active { transform: translateY(1px); }
-
-  /* Responsivo: empilha no mobile */
-
-  @media (max-width: 520px) {
-
-    .medium-cta__card {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    .medium-cta__button {
-      justify-self: start;
-    }
-  }
-
-  </style>
+  <!-- Font Awesome para ícones -->
+  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="wrapper">
-    <!-- Anúncio lateral esquerdo -->
-    <div class="ads-vertical">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-        data-ad-slot="1111111111"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
+
+  <div style="display: flex; flex: 1;">
+    <div class="sidebar">
+      <h2><i class="fas fa-cogs"></i> Ferramentas</h2>
+      <a href="./consulta-cpf-cnpj/consulta-cpf-cnpj.html"><i class="fas fa-id-card"></i> Consulta CPF e CNPJ</a>
     </div>
 
-    <!-- Conteúdo principal -->
-    <div class="container">
-      <h1>Validador / Gerador de CPF e CNPJ</h1>
-	  <br>
-	  <h2><i>Nosso gerador e validador de CPF e CNPJ é gratuito e pode ser usado para testes em sistemas, cadastros e estudos.</i></h2>
-	  <br>
-      <div class="menu">
-        <button id="cpfBtn" class="active" onclick="switchMode('cpf')">CPF</button>
-        <button id="cnpjBtn" class="inactive" onclick="switchMode('cnpj')">CNPJ</button>
-      </div>
-
-      <!-- Área CPF -->
-      <div id="cpfSection" class="box">
-        <label>Digite o CPF:</label>
-        <div class="inline">
-          <input type="text" id="cpfInput" maxlength="14" placeholder="Somente números">
-          <button onclick="validateCPF()">Validar</button>
-        </div>
-        <div id="cpfResult" class="result"></div>
-        <hr>
-        <label>Gerar CPF:</label>
-        <div class="radio-group">
-          <label class="radio-option">
-            <input type="radio" name="cpfFormat" value="pontuado" checked>
-            <span>Gerar com pontuação</span>
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="cpfFormat" value="limpo">
-            <span>Gerar sem pontuação</span>
-          </label>
-        </div>
-        <div style="text-align:center; margin-top:10px;">
-          <button onclick="generateCPF()">Gerar CPF</button>
-        </div>
-		<div id="cpfGenerated" class="result"></div>	
-		<div class="result-box">
-		  <button class="copy-btn" onclick="copiarTextoCPF()">📋 Copiar</button>
-		  <span id="copy-msgCPF" class="copy-msgCPF"></span>
-		</div>
-      </div>
-
-      <!-- Área CNPJ -->
-      <div id="cnpjSection" class="box" style="display:none;">
-        <label>Digite o CNPJ:</label>
-        <div class="inline">
-          <input type="text" id="cnpjInput" maxlength="18" placeholder="Somente números">
-          <button onclick="validateCNPJ()">Validar</button>
-        </div>
-        <div id="cnpjResult" class="result"></div>
-        <hr>
-        <label>Gerar CNPJ:</label>
-        <div class="radio-group">
-          <label class="radio-option">
-            <input type="radio" name="cnpjFormat" value="pontuado" checked>
-            <span>Gerar com pontuação</span>
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="cnpjFormat" value="limpo">
-            <span>Gerar sem pontuação</span>
-          </label>
-        </div>
-        <div style="text-align:center; margin-top:10px;">
-          <button onclick="generateCNPJ()">Gerar CNPJ</button>
-        </div>
-        <div id="cnpjGenerated" class="result"></div>
-		<div class="result-box">
-		  <button class="copy-btn" onclick="copiarTextoCNPJ()">📋 Copiar</button>
-		  <span id="copy-msgCNPJ" class="copy-msgCNPJ"></span>
-		</div>
-      </div>
-	  
-	
-		<!-- Bloco: Assinar o Substack -->
-		
-		<div style="text-align: center; background: #FFF; margin: 40px 0; padding: 20px; border: 2px solid #ddd; border-radius: 12px;">
-		  <h3>📩 Receba novidades por e-mail</h3>
-		  <p>Assine nossa newsletter no Substack e fique por dentro das atualizações.</p>
-		  <a href="https://knucklestyro.substack.com" target="_blank" 
-			 style="display: inline-block; background: #ff6719; color: white; padding: 10px 20px; 
-					border-radius: 8px; text-decoration: none; font-weight: bold;">
-			Assinar no Substack
-		  </a>
-		</div>
-		
-		<!-- Bloco: link para o artigo no Medium -->
-		<section class="medium-cta">
-		  <div class="medium-cta__card">
-			<div class="medium-cta__content">
-			  <h2 class="medium-cta__title">Saiba mais no Medium</h2>
-			  <p class="medium-cta__text">
-				Entenda como funciona a validação e geração de CPF/CNPJ e veja exemplos de uso prático.
-			  </p>
-			</div>
-			<a
-			  class="medium-cta__button"
-			  href="https://medium.com/@knuckles.tyro/gerador-e-validador-de-cpf-e-cnpj-online-r%C3%A1pido-simples-e-gr%C3%A1tis-2453d8476547"
-			  target="_blank"
-			  rel="noopener noreferrer"
-			  aria-label="Ler o artigo no Medium em nova aba"
-			>
-			  Ler o artigo ↗
-			</a>
-		  </div>
-		</section>
-
-      <!-- Anúncio abaixo do conteúdo -->
-      <div class="ads-horizontal">
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-          data-ad-slot="3333333333"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </div>
-
-    <!-- Anúncio lateral direito -->
-    <div class="ads-vertical">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-        data-ad-slot="2222222222"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="content">
+	  <img src="images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
+      <h1>Bem-vindo ao <strong>UtiliDigital</strong> 🚀</h1>
+      <p>
+        O <strong>UtiliDigital</strong> é uma plataforma de ferramentas digitais criadas para facilitar
+        o seu dia a dia. Aqui você encontra utilitários práticos e gratuitos, como
+        nosso validador e gerador de CPF e CNPJ. Em breve, novas funcionalidades
+        estarão disponíveis para você!
+      </p>
     </div>
   </div>
 
-  <script>
-    function switchMode(mode) {
-      if (mode === 'cpf') {
-        document.getElementById("cpfSection").style.display = "block";
-        document.getElementById("cnpjSection").style.display = "none";
-        document.getElementById("cpfBtn").classList.add("active");
-        document.getElementById("cpfBtn").classList.remove("inactive");
-        document.getElementById("cnpjBtn").classList.remove("active");
-        document.getElementById("cnpjBtn").classList.add("inactive");
-      } else {
-        document.getElementById("cpfSection").style.display = "none";
-        document.getElementById("cnpjSection").style.display = "block";
-        document.getElementById("cnpjBtn").classList.add("active");
-        document.getElementById("cnpjBtn").classList.remove("inactive");
-        document.getElementById("cpfBtn").classList.remove("active");
-        document.getElementById("cpfBtn").classList.add("inactive");
-      }
-    }
-	
-	// Copiar CPF 
-	function copiarTextoCPF() {
-	  const texto = document.getElementById("cpfGenerated").innerText;
-	  navigator.clipboard.writeText(texto).then(() => {
-		const msg = document.getElementById("copy-msgCPF");
-		msg.innerText = "Copiado ✅";
-		setTimeout(() => msg.innerText = "", 2000);
-	  });
-	}
-	
-	// Copiar CNPJ 
-	function copiarTextoCNPJ() {
-	  const texto = document.getElementById("cnpjGenerated").innerText;
-	  navigator.clipboard.writeText(texto).then(() => {
-		const msg = document.getElementById("copy-msgCNPJ");
-		msg.innerText = "Copiado ✅";
-		setTimeout(() => msg.innerText = "", 2000);
-	  });
-	}
+  <footer>
+    <p>
+      📩 Assine nossas atualizações:
+      <a href="https://medium.com/@utilidigital" target="_blank">Medium</a> |
+      <a href="https://utilidigital.substack.com" target="_blank">Substack</a>
+    </p>
+    <p>📧 Contato: contato@utilidigital.com.br</p>
+    <div class="social-icons">
+      <a href="https://twitter.com/utilidigital" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/utilidigital" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/company/utilidigital" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/knucklestyro" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+    <p>© 2025 UtiliDigital - Todos os direitos reservados.</p>
+  </footer>
 
-    // ===== CPF =====
-    function validateCPF() {
-      let cpf = document.getElementById("cpfInput").value.replace(/\D/g, "");
-      let result = document.getElementById("cpfResult");
-
-      if (cpf.length !== 11) {
-        result.innerHTML = "<span class='invalid'>Digite 11 números para o CPF.</span>";
-        return;
-      }
-
-      let sum = 0, remainder;
-      if (/^(\d)\1+$/.test(cpf)) {
-        result.innerHTML = "<span class='invalid'>CPF Inválido</span>";
-        return;
-      }
-      for (let i = 1; i <= 9; i++) sum += parseInt(cpf.substring(i-1, i)) * (11 - i);
-      remainder = (sum * 10) % 11;
-      if ((remainder === 10) || (remainder === 11)) remainder = 0;
-      if (remainder !== parseInt(cpf.substring(9, 10))) {
-        result.innerHTML = "<span class='invalid'>CPF Inválido</span>";
-        return;
-      }
-      sum = 0;
-      for (let i = 1; i <= 10; i++) sum += parseInt(cpf.substring(i-1, i)) * (12 - i);
-      remainder = (sum * 10) % 11;
-      if ((remainder === 10) || (remainder === 11)) remainder = 0;
-      if (remainder !== parseInt(cpf.substring(10, 11))) {
-        result.innerHTML = "<span class='invalid'>CPF Inválido</span>";
-        return;
-      }
-      result.innerHTML = "<span class='valid'>CPF Válido</span>";
-    }
-
-    function generateCPF() {
-      let n = [];
-      for (let i = 0; i < 9; i++) n.push(Math.floor(Math.random() * 9));
-      let d1 = 0, d2 = 0;
-      for (let i = 0; i < 9; i++) {
-        d1 += n[i] * (10 - i);
-        d2 += n[i] * (11 - i);
-      }
-      d1 = (d1 * 10) % 11; if (d1 === 10) d1 = 0;
-      d2 += d1 * 2; d2 = (d2 * 10) % 11; if (d2 === 10) d2 = 0;
-      n.push(d1); n.push(d2);
-
-      let cpf = n.join("");
-      let format = document.querySelector("input[name='cpfFormat']:checked").value;
-      if (format === "pontuado")
-        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-	
-	 
-      document.getElementById("cpfGenerated").innerHTML = "<div class='generated'>" + cpf + "</div>";
-	  
-    }
-
-    // ===== CNPJ =====
-    function validateCNPJ() {
-      let cnpj = document.getElementById("cnpjInput").value.replace(/\D/g, "");
-      let result = document.getElementById("cnpjResult");
-
-      if (cnpj.length !== 14) {
-        result.innerHTML = "<span class='invalid'>Digite 14 números para o CNPJ.</span>";
-        return;
-      }
-      if (/^(\d)\1+$/.test(cnpj)) {
-        result.innerHTML = "<span class='invalid'>CNPJ Inválido</span>";
-        return;
-      }
-      let length = cnpj.length - 2;
-      let numbers = cnpj.substring(0,length);
-      let digits = cnpj.substring(length);
-      let sum = 0;
-      let pos = length - 7;
-      for (let i = length; i >= 1; i--) {
-        sum += numbers.charAt(length - i) * pos--;
-        if (pos < 2) pos = 9;
-      }
-      let resultDigit = sum % 11 < 2 ? 0 : 11 - sum % 11;
-      if (resultDigit != digits.charAt(0)) {
-        result.innerHTML = "<span class='invalid'>CNPJ Inválido</span>";
-        return;
-      }
-      length = length + 1;
-      numbers = cnpj.substring(0,length);
-      sum = 0;
-      pos = length - 7;
-      for (let i = length; i >= 1; i--) {
-        sum += numbers.charAt(length - i) * pos--;
-        if (pos < 2) pos = 9;
-      }
-      resultDigit = sum % 11 < 2 ? 0 : 11 - sum % 11;
-      if (resultDigit != digits.charAt(1)) {
-        result.innerHTML = "<span class='invalid'>CNPJ Inválido</span>";
-        return;
-      }
-      result.innerHTML = "<span class='valid'>CNPJ Válido</span>";
-    }
-
-    function generateCNPJ() {
-      let n = [];
-      for (let i = 0; i < 12; i++) n.push(Math.floor(Math.random() * 9));
-      let d1 = 0, d2 = 0;
-      let pos = 5;
-      for (let i = 0; i < 12; i++) {
-        d1 += n[i] * pos--;
-        if (pos < 2) pos = 9;
-      }
-      d1 = (d1 % 11 < 2) ? 0 : 11 - d1 % 11;
-      n.push(d1);
-      pos = 6;
-      for (let i = 0; i < 13; i++) {
-        d2 += n[i] * pos--;
-        if (pos < 2) pos = 9;
-      }
-      d2 = (d2 % 11 < 2) ? 0 : 11 - d2 % 11;
-      n.push(d2);
-
-      let cnpj = n.join("");
-      let format = document.querySelector("input[name='cnpjFormat']:checked").value;
-      if (format === "pontuado")
-        cnpj = cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
-
-      document.getElementById("cnpjGenerated").innerHTML = "<div class='generated'>" + cnpj + "</div>";
-    }
-  </script>
 </body>
 </html>
