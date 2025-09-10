@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Validador e Gerador de CPF e CNPJ Online | UtiliDigital</title>
-  <meta name="description" content="Valide e gere números de CPF e CNPJ de forma rápida e gratuita. Ferramenta online simples e confiável." />
+  <title>Termos de uso - UtiliDigital</title>
+  <meta name="description" content="Nossa Política de Privacidade" />
   <link rel="stylesheet" href="css/style.css">
-  <script src="./js/script.js"></script>
   <style>
     .upload-page-wrapper {
       display:flex;
@@ -92,92 +91,26 @@
 	  <a href="politica-privacidade.html"><i class="fas fa-user-shield"></i> Política de Privacidade</a>
 	  <a href="termos-uso.html"><i class="fas fa-file-contract"></i> Termos de Uso</a>
 	  <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
-	</div> 
+	</div>
 
-
-    <main class="content" style="padding:32px;">
+        <main class="content" style="padding:32px;">
       <div class="upload-page-wrapper">
         <div class="upload-container" role="main" aria-labelledby="titulo">
-		  <!-- Conteúdo principal -->
-			<div class="content">
-			  <img src="./images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
-			  <h1>Validador / Gerador de CPF e CNPJ</h1>
-
-			  <div class="menu">
-				<button id="cpfBtn" class="active" onclick="switchMode('cpf')">CPF</button>
-				<button id="cnpjBtn" class="inactive" onclick="switchMode('cnpj')">CNPJ</button>
-			  </div>
-
-			  <!-- Área CPF -->
-			  <div id="cpfSection" class="box">
-				<label>Digite o CPF:</label>
-				<div class="inline">
-				  <input type="text" id="cpfInput" maxlength="14" placeholder="Somente números">
-				  <button onclick="validateCPF()">Validar</button>
-				</div>
-				<div id="cpfResult" class="result"></div>
-				<hr>
-				<label>Gerar CPF:</label>
-				<div class="radio-group">
-				  <label class="radio-option">
-					<input type="radio" name="cpfFormat" value="pontuado" checked>
-					<span>Gerar com pontuação</span>
-				  </label>
-				  <label class="radio-option">
-					<input type="radio" name="cpfFormat" value="limpo">
-					<span>Gerar sem pontuação</span>
-				  </label>
-				</div>
-				<div style="text-align:center; margin-top:10px;">
-				  <button onclick="generateCPF()">Gerar CPF</button>
-				</div>
-				<div id="cpfGenerated" class="result"></div>
-			  </div>
-
-			  <!-- Área CNPJ -->
-			  <div id="cnpjSection" class="box" style="display:none;">
-				<label>Digite o CNPJ:</label>
-				<div class="inline">
-				  <input type="text" id="cnpjInput" maxlength="18" placeholder="Somente números">
-				  <button onclick="validateCNPJ()">Validar</button>
-				</div>
-				<div id="cnpjResult" class="result"></div>
-				<hr>
-				<label>Gerar CNPJ:</label>
-				<div class="radio-group">
-				  <label class="radio-option">
-					<input type="radio" name="cnpjFormat" value="pontuado" checked>
-					<span>Gerar com pontuação</span>
-				  </label>
-				  <label class="radio-option">
-					<input type="radio" name="cnpjFormat" value="limpo">
-					<span>Gerar sem pontuação</span>
-				  </label>
-				</div>
-				<div style="text-align:center; margin-top:10px;">
-				  <button onclick="generateCNPJ()">Gerar CNPJ</button>
-				</div>
-				<div id="cnpjGenerated" class="result"></div>
-			  </div>
-
-			  <!-- Anúncio abaixo -->
-			  <div class="ads-horizontal">
-				<ins class="adsbygoogle"
-				  style="display:block"
-				  data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-				  data-ad-slot="3333333333"
-				  data-ad-format="auto"
-				  data-full-width-responsive="true"></ins>
-				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-			  </div>
-			</div>
+		  <h1>Termos de Uso</h1>
+		  <p>O site <strong>UtiliDigital</strong> disponibiliza ferramentas gratuitas para uso público, incluindo geradores de CPF/CNPJ e conversores de arquivos.</p>
+		  <p>Ao utilizar nossos serviços, o usuário reconhece e concorda que:</p>
+		  <ul>
+			<li>Não armazenamos nenhum dado inserido nas ferramentas.</li>
+			<li>Os números de CPF/CNPJ gerados são totalmente aleatórios e <strong>não garantem a existência ou validade legal</strong> dos mesmos.</li>
+			<li>O site não se responsabiliza pelo uso indevido das informações geradas.</li>
+			<li>É proibido utilizar nossas ferramentas para fraudes, crimes digitais ou qualquer atividade ilícita.</li>
+		  </ul>
+		  <p>Ao navegar neste site, você declara estar de acordo com estes termos.</p>
 		  </div>
         </div>
-      </div>
     </main>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>📩 Assine nossas atualizações: 
       <a href="https://medium.com/@utilidigital" target="_blank">Medium</a> |
@@ -191,7 +124,6 @@
     </div>
     <p>© 2025 UtiliDigital - Todos os direitos reservados.</p>
   </footer>
-
 
 </body>
 </html>

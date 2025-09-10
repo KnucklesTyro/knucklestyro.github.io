@@ -30,38 +30,126 @@
   <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
 
   <div style="display: flex; flex: 1;">
-    <div class="sidebar">
-      <h2><i class="fas fa-cogs"></i> Ferramentas</h2>
-      <a href="./consulta-cpf-cnpj.html"><i class="fas fa-id-card"></i> Consulta CPF e CNPJ</a>
-    </div>
+	<div class="sidebar">
+	  <h2><i class="fas fa-cogs"></i> Ferramentas</h2>
+	  <a href="./consulta-cpf-cnpj.html"><i class="fas fa-id-card"></i> Consulta CPF e CNPJ</a>
+	  <a href="upload-base64.html"><i class="fas fa-file-upload"></i> Upload → Base64</a>
+
+	  <h2><i class="fas fa-info-circle"></i> Institucional</h2>
+	  <a href="politica-privacidade.html"><i class="fas fa-user-shield"></i> Política de Privacidade</a>
+	  <a href="termos-uso.html"><i class="fas fa-file-contract"></i> Termos de Uso</a>
+	  <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+	</div>
+
 
     <div class="content">
-	  <img src="images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
+      <img src="images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
+
       <h1>Bem-vindo ao <strong>UtiliDigital</strong> 🚀</h1>
-      <p>
-        O <strong>UtiliDigital</strong> é uma plataforma de ferramentas digitais criadas para facilitar
-        o seu dia a dia. Aqui você encontra utilitários práticos e gratuitos, como
-        nosso validador e gerador de CPF e CNPJ. Em breve, novas funcionalidades
-        estarão disponíveis para você!
-      </p>
+
+      <section class="hero">
+        <p>
+          O <strong>UtiliDigital</strong> é uma plataforma de ferramentas digitais criada para facilitar atividades rotineiras em ambientes online.
+          Nossa proposta é oferecer utilitários práticos, rápidos e gratuitos — sem sujeira: sem cadastros, sem instalações, diretamente no navegador.
+          Começamos com validadores de documentos e um conversor para Base64, e vamos ampliar a coleção de ferramentas conforme o projeto evolui.
+        </p>
+      </section>
+
+      <section class="tools" aria-labelledby="tools-title">
+        <h2 id="tools-title">Nossas principais ferramentas</h2>
+
+        <article>
+          <h3>Validador de CPF</h3>
+          <p>
+            O CPF (Cadastro de Pessoa Física) é essencial para uma série de operações no Brasil.  
+            A nossa ferramenta verifica se um número de CPF atende às regras de formação e dígitos verificadores — útil para evitar erros em cadastros, prevenir inconsistências em sistemas e identificar entradas inválidas rapidamente.
+          </p>
+        </article>
+
+        <article>
+          <h3>Validador de CNPJ</h3>
+          <p>
+            O CNPJ (Cadastro Nacional de Pessoa Jurídica) identifica empresas.  
+            Validar um CNPJ ajuda a confirmar a formatação correta e o cálculo dos dígitos, o que é importante para lojas, plataformas de pagamento, sistemas de cadastro e profissionais que lidam com dados empresariais.
+          </p>
+        </article>
+
+        <article>
+          <h3>Conversor de Arquivos para Base64</h3>
+          <p>
+            A codificação Base64 transforma arquivos binários em texto, o que facilita o envio e armazenamento em contextos que pedem texto (APIs, JSON, banco de dados, etc.).  
+            Com nosso conversor você pode fazer upload de um arquivo, obter o Base64 completo ou somente o corpo (body) da codificação e copiar/baixar o resultado.
+          </p>
+        </article>
+      </section>
+
+      <section class="knowledge" aria-labelledby="knowledge-title">
+        <h2 id="knowledge-title">Entenda os conceitos</h2>
+
+        <h3>O que é CPF e por que validar?</h3>
+        <p>
+          O CPF é um número atribuído pela Receita Federal para identificação de pessoas físicas.  
+          Nem todo número que se parece com um CPF é válido — existem regras matemáticas por trás dos dois últimos dígitos (dígitos verificadores). Validar significa checar essas regras para evitar cadastros inválidos.
+        </p>
+
+        <h3>O que é CNPJ e como funciona a validação?</h3>
+        <p>
+          O CNPJ identifica empresas e organizações. Assim como o CPF, o CNPJ possui dígitos verificadores que seguem um cálculo específico.  
+          Validar o CNPJ é uma prática recomendada para confirmar que o número informado segue as regras formais e reduzir riscos de erro ou fraude em sistemas.
+        </p>
+
+        <h3>Quando usar Base64?</h3>
+        <p>
+          Use Base64 quando precisar transformar um arquivo binário em texto para enviar em APIs, embutir imagens diretamente em HTML/CSS ou armazenar dados binários em campos que aceitam apenas texto.  
+          Nossa ferramenta permite escolher entre o Base64 completo (com o cabeçalho `data:...;base64,`) ou apenas o corpo — útil conforme a necessidade técnica.
+        </p>
+      </section>
+
+      <section class="blog" aria-labelledby="blog-title">
+        <h2 id="blog-title">Últimos artigos e novidades</h2>
+        <p>
+          Publicamos guias e notícias sobre ferramentas digitais, boas práticas e pequenas explicações técnicas.  
+          Acompanhe nossos artigos no <a href="https://medium.com/@utilidigital" target="_blank" rel="noopener">Medium</a> e no <a href="https://utilidigital.substack.com" target="_blank" rel="noopener">Substack</a>.
+        </p>
+      </section>
+
+      <section class="cta" aria-labelledby="cta-title">
+        <h2 id="cta-title">Por que usar o UtiliDigital?</h2>
+        <ul>
+          <li>Ferramentas gratuitas e fáceis de usar;</li>
+          <li>Sem necessidade de cadastro ou instalação;</li>
+          <li>Foco em praticidade e velocidade;</li>
+          <li>Privacidade: não armazenamos seus arquivos ou entradas (as conversões acontecem no navegador).</li>
+        </ul>
+      </section>
+
     </div>
   </div>
 
-  <footer>
-    <p>
-      📩 Assine nossas atualizações:
-      <a href="https://medium.com/@utilidigital" target="_blank">Medium</a> |
-      <a href="https://utilidigital.substack.com" target="_blank">Substack</a>
-    </p>
-    <p>📧 Contato: contato@utilidigital.com.br</p>
-    <div class="social-icons">
-      <a href="https://twitter.com/utilidigital" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/utilidigital" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://linkedin.com/company/utilidigital" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/knucklestyro" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
-    <p>© 2025 UtiliDigital - Todos os direitos reservados.</p>
-  </footer>
+<footer>
+  <p>
+    📩 Assine nossas atualizações:
+    <a href="https://medium.com/@utilidigital" target="_blank">Medium</a> |
+    <a href="https://utilidigital.substack.com" target="_blank">Substack</a>
+  </p>
+  <p>📧 Contato: <a href="mailto:contato@utilidigital.com.br">contato@utilidigital.com.br</a></p>
+
+  <div class="footer-links">
+    <a href="politica-privacidade.html">Política de Privacidade</a> |
+    <a href="termos-uso.html">Termos de Uso</a> |
+    <a href="contato.html">Contato</a>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://twitter.com/utilidigital" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/utilidigital" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://linkedin.com/company/utilidigital" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/knucklestyro" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+
+  <p>© 2025 UtiliDigital - Todos os direitos reservados.</p>
+</footer>
+
 
 </body>
 </html>
