@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upload → Base64 | UtiliDigital</title>
+  <meta name="description" content="Carregue um arquivo e converta-o em Base64. Ferramenta simples e rápida." />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .upload-page-wrapper {
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      padding:24px;
+      justify-content:center;
+    }
+    .upload-container {
+      width:100%;
+      max-width:820px;
+      background:#fff;
+      padding:20px;
+      border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+    .drop-zone {
+      margin: 16px 0;
+      padding: 30px;
+      border: 2px dashed #888;
+      border-radius: 8px;
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .drop-zone.dragover {
+      background: #eef6ff;
+      border-color: #007bff;
+      color: #007bff;
+    }
+    .upload-controls {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-bottom:12px;
+    }
+    .file-info { margin-top:10px; color:#444; font-size:14px; }
+    .base64-output {
+      margin-top:14px;
+      width:100%;
+      min-height:180px;
+      max-height:420px;
+      overflow:auto;
+      background:#f7f7f8;
+      border:1px solid #e0e0e0;
+      padding:12px;
+      border-radius:6px;
+      font-family:monospace;
+      font-size:13px;
+      white-space:pre-wrap;
+      word-break:break-all;
+    }
+    .preview { margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; }
+    .preview img { max-width:240px; max-height:160px; border-radius:6px; border:1px solid #ddd; }
+    .small-muted { color:#666; font-size:13px; }
+    .controls-right { margin-left:auto; display:flex; gap:8px; }
+    @media (max-width:820px){
+      .upload-page-wrapper { padding:12px; }
+      .upload-container { padding:14px; }
+      .preview img { max-width:180px; max-height:140px; }
+    }
+	
+.content img.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 2px;
+}
+  </style>
+</head>
+<body>
+  <div style="display:flex;min-height:100vh;">
+	<div class="sidebar">
+	  <h2><i class="fas fa-cogs"></i> Retornar</h2>
+	  <a href="./index.html"><i class="fas fa-id-card"></i> Início</a>
+	
+	  <h2><i class="fas fa-cogs"></i> Ferramentas</h2>
+	  <a href="./consulta-cpf-cnpj.html"><i class="fas fa-id-card"></i> Consulta CPF e CNPJ</a>
+	  <a href="upload-base64.html"><i class="fas fa-file-upload"></i> Upload → Base64</a>
+
+	  <h2><i class="fas fa-info-circle"></i> Institucional</h2>
+	  <a href="politica-privacidade.html"><i class="fas fa-user-shield"></i> Política de Privacidade</a>
+	  <a href="termos-uso.html"><i class="fas fa-file-contract"></i> Termos de Uso</a>
+	  <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+	</div>
+
+    <main class="content" style="padding:32px;">
+      <div class="upload-page-wrapper">
+        <div class="upload-container" role="main" aria-labelledby="titulo">
+		  <img src="./images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
+          <h1 id="titulo">Conversor de Arquivo → Base64</h1>
+		  <p class="small-muted">Arraste e solte um arquivo abaixo ou use o seletor tradicional. Escolha se deseja o Base64 completo ou apenas o corpo.<br>
+		  <b>Limite: 8MB por arquivo</b></p>
+
+          <div class="drop-zone" id="dropZone">Arraste e solte seu arquivo aqui</div>
+
+          <div class="upload-controls">
+            <input id="fileInput" type="file" />
+            <div class="controls-right">
+              <button id="convertBtn" class="btn" type="button">Converter</button>
+              <button id="clearBtn" class="btn" type="button">Limpar</button>
+            </div>
+          </div>
+
+          <fieldset style="margin:12px 0;">
+            <legend>Formato do Base64:</legend>
+			<div class="radio-toggle">
+			  <input type="radio" id="modeFull" name="mode" value="full" checked>
+			  <label for="modeFull">Base64 completo</label>
+
+			  <input type="radio" id="modeBody" name="mode" value="body">
+			  <label for="modeBody">Somente o body</label>
+			</div>	
+          </fieldset>
+
+
+
+          <div id="fileInfo" class="file-info small-muted">Nenhum arquivo selecionado.</div>
+          <div id="previewArea" class="preview" aria-live="polite"></div>
+
+          <label for="base64Output" style="display:block;margin-top:12px;font-weight:600;">Resultado</label>
+          <div id="base64Output" class="base64-output" contenteditable="false" aria-live="polite"></div>
+
+          <div style="display:flex; gap:8px; margin-top:10px; align-items:center;">
+            <button id="copyBtn" class="btn" type="button">📋 Copiar Base64</button>
+            <button id="downloadBtn" class="btn" type="button">⬇️ Baixar como .txt</button>
+            <div id="statusMsg" style="margin-left:12px;color:#2a7a2a;font-weight:600;"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/upload-base64.js"></script>
+</body>
+</html>

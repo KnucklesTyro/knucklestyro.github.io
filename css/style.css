@@ -9,6 +9,43 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+/* Estiliza o grupo como botões */
+.radio-toggle {
+  display: inline-flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.radio-toggle input[type="radio"] {
+  display: none;
+}
+
+.radio-toggle label {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.radio-toggle input[type="radio"]:checked + label {
+  background: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+/* Hover */
+.radio-toggle label:hover {
+  background: #e2e6ea;
+}
+.radio-toggle input[type="radio"]:checked + label:hover {
+  background: #0056b3;
+}
+
+
 /* Dark mode (mesma classe do seu HTML: .dark) */
 
 body.dark {
@@ -244,3 +281,5 @@ button:hover { background-color: #0056b3; }
 }
 
 .ads-horizontal { margin: 20px auto; text-align: center; }
+
+
