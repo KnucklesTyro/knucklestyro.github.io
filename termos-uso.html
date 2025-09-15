@@ -6,6 +6,7 @@
   <title>Termos de uso - UtiliDigital</title>
   <meta name="description" content="Nossa Política de Privacidade" />
   <link rel="stylesheet" href="css/style.css">
+  <script src="./js/script.js"></script>
   
   	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -88,6 +89,9 @@
   </style>
 </head>
 <body>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
+
+
   <div style="display:flex;min-height:100vh;">
 	<div class="sidebar">
 	  <h2><i class="fas fa-cogs"></i> Retornar</h2>
@@ -96,6 +100,7 @@
 	  <h2><i class="fas fa-cogs"></i> Ferramentas</h2>
 	  <a href="./consulta-cpf-cnpj.html"><i class="fas fa-id-card"></i> Consulta CPF e CNPJ</a>
 	  <a href="upload-base64.html"><i class="fas fa-file-upload"></i> Upload → Base64</a>
+      <a href="./gerador-senhas.html"><i class="fas fa-key"></i> Gerador de Senhas</a>
 
 	  <h2><i class="fas fa-info-circle"></i> Institucional</h2>
 	  <a href="politica-privacidade.html"><i class="fas fa-user-shield"></i> Política de Privacidade</a>
@@ -121,19 +126,50 @@
     </main>
   </div>
 
-  <footer>
-    <p>📩 Assine nossas atualizações: 
-      <a href="https://medium.com/@utilidigital" target="_blank">Medium</a> |
-      <a href="https://utilidigital.substack.com" target="_blank">Substack</a>
-    </p>
-    <p>📧 Contato: <a href="mailto:contato.utilidigital@gmail.com">contato.utilidigital@gmail.com</a></p>
-    <div class="footer-links">
-      <a href="politica-privacidade.html">Política de Privacidade</a> |
-      <a href="termos-uso.html">Termos de Uso</a> |
-      <a href="contato.html">Contato</a>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p><strong>UtiliDigital</strong> - Ferramentas online gratuitas para o dia a dia.</p>
+
+      <nav class="footer-links">
+        <a href="index.html">Início</a> |
+        <a href="consulta-cpf-cnpj.html">Validador CPF/CNPJ</a> |
+        <a href="base64.html">Conversor Base64</a> |
+        <a href="gerador-senha.html">Gerador de Senhas</a> |
+        <a href="politica-privacidade.html">Política de Privacidade</a> |
+        <a href="termos-uso.html">Termos de Uso</a> |
+        <a href="contato.html">Contato</a>
+      </nav>
     </div>
-    <p>© 2025 UtiliDigital - Todos os direitos reservados.</p>
-  </footer>
+
+    <div class="footer-right">
+      <div class="favorites">
+        <button onclick="addFavorite()">⭐ Adicionar aos Favoritos</button>
+      </div>
+      <p class="copy">© 2025 UtiliDigital. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function addFavorite() {
+  const url = window.location.href;
+  const title = document.title;
+
+  if (window.external && ('AddFavorite' in window.external)) {
+    // IE antigo
+    window.external.AddFavorite(url, title);
+  } else if (window.sidebar && window.sidebar.addPanel) {
+    // Firefox antigo
+    window.sidebar.addPanel(title, url, "");
+  } else {
+    // Chrome, Edge, Firefox moderno, Safari → instruções
+    alert("Pressione CTRL+D (Windows) ou CMD+D (Mac) para adicionar este site aos favoritos.");
+  }
+}
+</script>
+
+
 
 </body>
 </html>

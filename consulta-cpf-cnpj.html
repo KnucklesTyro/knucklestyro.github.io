@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Validador e Gerador de CPF e CNPJ Online | UtiliDigital</title>
-  <meta name="description" content="Valide e gere números de CPF e CNPJ de forma rápida e gratuita. Ferramenta online simples e confiável." />
+  <meta name="description" content="Valide, gere e consulte CPF e CNPJ online de forma rápida e gratuita. Ferramenta prática para testes e validações de sistemas.">
   <link rel="stylesheet" href="css/style.css">
   <script src="./js/script.js"></script>
   
@@ -89,6 +89,9 @@
   </style>
 </head>
 <body>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
+
+
   <div style="display:flex;min-height:100vh;">
 	<div class="sidebar">
 	  <h2><i class="fas fa-cogs"></i> Retornar</h2>
@@ -97,6 +100,7 @@
 	  <h2><i class="fas fa-cogs"></i> Ferramentas</h2>
 	  <a href="./consulta-cpf-cnpj.html"><i class="fas fa-id-card"></i> Consulta CPF e CNPJ</a>
 	  <a href="upload-base64.html"><i class="fas fa-file-upload"></i> Upload → Base64</a>
+      <a href="./gerador-senhas.html"><i class="fas fa-key"></i> Gerador de Senhas</a>
 
 	  <h2><i class="fas fa-info-circle"></i> Institucional</h2>
 	  <a href="politica-privacidade.html"><i class="fas fa-user-shield"></i> Política de Privacidade</a>
@@ -112,6 +116,10 @@
 			<div class="content">
 			  <img src="./images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
 			  <h1>Validador / Gerador de CPF e CNPJ</h1>
+
+			  <h2>O que é CPF e CNPJ?</h2>
+			  <p>O CPF (Cadastro de Pessoas Físicas) e o CNPJ (Cadastro Nacional da Pessoa Jurídica) são documentos essenciais para identificação no Brasil. Nosso validador e gerador de números permite testar sistemas, cadastrar dados fictícios e evitar erros de digitação.</p>
+
 
 			  <div class="menu">
 				<button id="cpfBtn" class="active" onclick="switchMode('cpf')">CPF</button>
@@ -188,19 +196,50 @@
   </div>
 
   <!-- Footer -->
-  <footer>
-    <p>📩 Assine nossas atualizações: 
-      <a href="https://medium.com/@utilidigital" target="_blank">Medium</a> |
-      <a href="https://utilidigital.substack.com" target="_blank">Substack</a>
-    </p>
-    <p>📧 Contato: <a href="mailto:contato.utilidigital@gmail.com">contato.utilidigital@gmail.com</a></p>
-    <div class="footer-links">
-      <a href="politica-privacidade.html">Política de Privacidade</a> |
-      <a href="termos-uso.html">Termos de Uso</a> |
-      <a href="contato.html">Contato</a>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p><strong>UtiliDigital</strong> - Ferramentas online gratuitas para o dia a dia.</p>
+
+      <nav class="footer-links">
+        <a href="index.html">Início</a> |
+        <a href="consulta-cpf-cnpj.html">Validador CPF/CNPJ</a> |
+        <a href="base64.html">Conversor Base64</a> |
+        <a href="gerador-senha.html">Gerador de Senhas</a> |
+        <a href="politica-privacidade.html">Política de Privacidade</a> |
+        <a href="termos-uso.html">Termos de Uso</a> |
+        <a href="contato.html">Contato</a>
+      </nav>
     </div>
-    <p>© 2025 UtiliDigital - Todos os direitos reservados.</p>
-  </footer>
+
+    <div class="footer-right">
+      <div class="favorites">
+        <button onclick="addFavorite()">⭐ Adicionar aos Favoritos</button>
+      </div>
+      <p class="copy">© 2025 UtiliDigital. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function addFavorite() {
+  const url = window.location.href;
+  const title = document.title;
+
+  if (window.external && ('AddFavorite' in window.external)) {
+    // IE antigo
+    window.external.AddFavorite(url, title);
+  } else if (window.sidebar && window.sidebar.addPanel) {
+    // Firefox antigo
+    window.sidebar.addPanel(title, url, "");
+  } else {
+    // Chrome, Edge, Firefox moderno, Safari → instruções
+    alert("Pressione CTRL+D (Windows) ou CMD+D (Mac) para adicionar este site aos favoritos.");
+  }
+}
+</script>
+
+
 
 
 </body>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas Seguras Online | UtiliDigital</title>
+  <meta name="description" content="Crie senhas seguras online com letras, números e símbolos. Personalize o tamanho e proteja suas contas contra invasões.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="./js/script.js"></script>
+</head>
+<body>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
+
+  <div style="display: flex; flex: 1;">
+    <!-- Sidebar -->
+    <div class="sidebar">
+	
+	  <h2><i class="fas fa-cogs"></i> Retornar</h2>
+	  <a href="./index.html"><i class="fas fa-id-card"></i> Início</a>
+	  
+      <h2><i class="fas fa-cogs"></i> Ferramentas</h2>
+      <a href="./consulta-cpf-cnpj.html"><i class="fas fa-id-card"></i> Consulta CPF e CNPJ</a>
+      <a href="./upload-base64.html"><i class="fas fa-file-upload"></i> Upload → Base64</a>
+      <a href="./gerador-senhas.html"><i class="fas fa-key"></i> Gerador de Senhas</a>
+	  
+	  <h2><i class="fas fa-info-circle"></i> Institucional</h2>
+	  <a href="politica-privacidade.html"><i class="fas fa-user-shield"></i> Política de Privacidade</a>
+	  <a href="termos-uso.html"><i class="fas fa-file-contract"></i> Termos de Uso</a>
+	  <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+      <img src="images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
+      <h1>Gerador de Senhas Seguras Online</h1>
+
+	  <h2>Por que usar um gerador de senhas?</h2>
+	  <p>Usar senhas fáceis aumenta o risco de invasão. Nosso gerador cria combinações fortes com letras maiúsculas, minúsculas, números e símbolos. Assim você protege suas contas pessoais e profissionais contra ataques.</p>
+
+      <!-- Configuração da senha -->
+      <div class="box">
+        <label for="lengthRange"><strong>Tamanho da senha:</strong></label>
+        <input type="range" id="lengthRange" min="6" max="25" value="12" oninput="gerador-senha.updateLengthLabel()"><br/>
+        <span id="lengthLabel">12</span> caracteres
+      </div>
+
+		<div class="box options-box">
+		  <label class="switch-label">
+			<input type="checkbox" id="useSpecials">
+			<span class="switch"></span>
+			<span class="label-text">Usar caracteres especiais (! * @)</span>
+		  </label>
+
+		  <label class="switch-label">
+			<input type="checkbox" id="useUpperLower" checked>
+			<span class="switch"></span>
+			<span class="label-text">Usar letras maiúsculas e minúsculas</span>
+		  </label>
+
+		  <label class="switch-label">
+			<input type="checkbox" id="noSeqRepeat">
+			<span class="switch"></span>
+			<span class="label-text">Não permitir números em sequência ou repetidos</span>
+		  </label>
+		</div>
+
+      <button onclick="generatePassword()">Gerar Senha</button>
+
+      <div class="box" style="margin-top:20px;">
+        <label><strong>Sua senha gerada:</strong></label>
+        <div class="inline">
+          <input type="text" id="passwordOutput" readonly>
+          <button onclick="copyPassword()">Copiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p><strong>UtiliDigital</strong> - Ferramentas online gratuitas para o dia a dia.</p>
+
+      <nav class="footer-links">
+        <a href="index.html">Início</a> |
+        <a href="consulta-cpf-cnpj.html">Validador CPF/CNPJ</a> |
+        <a href="base64.html">Conversor Base64</a> |
+        <a href="gerador-senha.html">Gerador de Senhas</a> |
+        <a href="politica-privacidade.html">Política de Privacidade</a> |
+        <a href="termos-uso.html">Termos de Uso</a> |
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+
+    <div class="footer-right">
+      <div class="favorites">
+        <button onclick="addFavorite()">⭐ Adicionar aos Favoritos</button>
+      </div>
+      <p class="copy">© 2025 UtiliDigital. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function addFavorite() {
+  const url = window.location.href;
+  const title = document.title;
+
+  if (window.external && ('AddFavorite' in window.external)) {
+    // IE antigo
+    window.external.AddFavorite(url, title);
+  } else if (window.sidebar && window.sidebar.addPanel) {
+    // Firefox antigo
+    window.sidebar.addPanel(title, url, "");
+  } else {
+    // Chrome, Edge, Firefox moderno, Safari → instruções
+    alert("Pressione CTRL+D (Windows) ou CMD+D (Mac) para adicionar este site aos favoritos.");
+  }
+}
+</script>
+
+
+
+
+<script src="js/gerador-senha.js"></script>
+
+</body>
+</html>
