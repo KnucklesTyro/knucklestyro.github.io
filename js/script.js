@@ -187,3 +187,8 @@ function generateCNPJ() {
     }
   output.innerHTML = "<div>CNPJ Gerado!</div><div class='generated'>" + cnpj + "</div>";
 }
+
+
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("active");
+}

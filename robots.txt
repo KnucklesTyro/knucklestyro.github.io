@@ -1,9 +1,4 @@
-# Permite que todos os robôs indexem o site
 User-agent: *
 Allow: /
 
-# Bloqueios específicos (se quiser impedir áreas internas, pode incluir aqui)
-# Disallow: /admin/
-
-# Localização do sitemap
 Sitemap: https://www.utilidigital.com.br/sitemap.xml

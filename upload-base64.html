@@ -7,9 +7,10 @@
   <meta name="description" content="Converta arquivos para Base64 online de forma simples, rápida e gratuita. Ideal para integrações com APIs e armazenamento de dados.">
   <link rel="stylesheet" href="css/style.css">
     <script src="./js/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENPY20Q61N"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
@@ -92,20 +93,22 @@
   <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
 
 
-  <div style="display:flex;min-height:100vh;">
-	<div class="sidebar">
-	  <h2><i class="fas fa-cogs"></i> Retornar</h2>
-	  <a href="./index.html"><i class="fas fa-id-card"></i> Início</a>
-	
-	  <h2><i class="fas fa-cogs"></i> Ferramentas</h2>
-	  <a href="./consulta-cpf-cnpj.html"><i class="fas fa-id-card"></i> Consulta CPF e CNPJ</a>
-	  <a href="upload-base64.html"><i class="fas fa-file-upload"></i> Upload → Base64</a>
-      <a href="./gerador-senhas.html"><i class="fas fa-key"></i> Gerador de Senhas</a>
+  <div class="layout-wrapper">
+	<button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
 
-	  <h2><i class="fas fa-info-circle"></i> Institucional</h2>
-	  <a href="politica-privacidade.html"><i class="fas fa-user-shield"></i> Política de Privacidade</a>
-	  <a href="termos-uso.html"><i class="fas fa-file-contract"></i> Termos de Uso</a>
-	  <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+	<div class="sidebar" id="sidebar">
+	  <h3>Retornar</h3>
+	  <a href="index.html"><i class="fa-solid fa-house"></i>  Início</a>
+
+	  <h3>Ferramentas</h3>
+	  <a href="consulta-cpf-cnpj.html"><i class="fa-solid fa-id-card"></i>  Consulta CPF e CNPJ</a>
+	  <a href="upload-base64.html"><i class="fa-solid fa-file-code"></i>  Upload → Base64</a>
+	  <a href="gerador-senhas.html"><i class="fa-solid fa-key"></i>  Gerador de Senhas</a>
+
+	  <h3>Institucional</h3>
+	  <a href="politica-privacidade.html"><i class="fa-solid fa-shield-halved"></i>  Política de Privacidade</a>
+	  <a href="termos-uso.html"><i class="fa-solid fa-scale-balanced"></i>  Termos de Uso</a>
+	  <a href="contato.html"><i class="fa-solid fa-envelope"></i>  Contato</a>
 	</div>
 
     <main class="content" style="padding:32px;">
