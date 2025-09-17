@@ -34,6 +34,9 @@
 	  <a href="consulta-cpf-cnpj.html"><i class="fa-solid fa-id-card"></i>  Consulta CPF e CNPJ</a>
 	  <a href="upload-base64.html"><i class="fa-solid fa-file-code"></i>  Upload → Base64</a>
 	  <a href="gerador-senhas.html"><i class="fa-solid fa-key"></i>  Gerador de Senhas</a>
+	  
+	  <h3>Blog UtiliDigital</h3>
+      <a href="blog.html"><i class="fa-solid fa-blog"></i> Blog</a>
 
 	  <h3>Institucional</h3>
 	  <a href="politica-privacidade.html"><i class="fa-solid fa-shield-halved"></i>  Política de Privacidade</a>
@@ -43,48 +46,55 @@
 
     <!-- Conteúdo principal -->
     <div class="content">
-      <img src="images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
-      <h1>Gerador de Senhas Seguras Online</h1>
+		<div class="cpf-page-wrapper">
+		  <div class="cpf-container">	
+			  <img src="images/logo-light.png" alt="Logo da UtiliDigital - Ferramentas Online" class="logo" id="logo">
+			  <h1>Gerador de Senhas Seguras Online</h1>
 
-	  <h2>Por que usar um gerador de senhas?</h2>
-	  <p>Usar senhas fáceis aumenta o risco de invasão. Nosso gerador cria combinações fortes com letras maiúsculas, minúsculas, números e símbolos. Assim você protege suas contas pessoais e profissionais contra ataques.</p>
+			  <h2>Por que usar um gerador de senhas?</h2>
+			  <p>Manter a <strong>segurança digital</strong> é essencial no dia a dia, e o primeiro passo é criar <strong>senhas realmente fortes</strong>. Usar combinações simples, como datas de nascimento ou sequências numéricas, pode colocar sua conta em risco e facilitar ataques de hackers.<br/><br/>
+				Nosso <strong>gerador de senhas online</strong> cria combinações seguras e aleatórias com letras maiúsculas, minúsculas, números e caracteres especiais. Você pode personalizar o tamanho e a complexidade da senha conforme sua necessidade, garantindo maior proteção em sites, redes sociais, aplicativos e até em sistemas corporativos.<br/><br/>
+				<strong>Senhas fortes</strong> ajudam a proteger dados pessoais, informações bancárias e acessos importantes. O uso de um gerador elimina o hábito perigoso de repetir a mesma senha em várias plataformas, aumentando significativamente a sua segurança.<br/><br/>
+				👉 Utilize nossa <strong>ferramenta gratuita</strong> para criar senhas seguras e difíceis de adivinhar, mantendo sua privacidade protegida em qualquer situação.</p>
 
-      <!-- Configuração da senha -->
-      <div class="box">
-        <label for="lengthRange"><strong>Tamanho da senha:</strong></label>
-        <input type="range" id="lengthRange" min="6" max="25" value="12" oninput="gerador-senha.updateLengthLabel()"><br/>
-        <span id="lengthLabel">12</span> caracteres
-      </div>
+			  <!-- Configuração da senha -->
+			  <div class="box">
+				<label for="lengthRange"><strong>Tamanho da senha:</strong></label>
+				<input type="range" id="lengthRange" min="6" max="25" value="12" oninput="updateLengthLabel()"><br/>
+				<span id="lengthLabel">12</span> caracteres
+			  </div>
 
-		<div class="box options-box">
-		  <label class="switch-label">
-			<input type="checkbox" id="useSpecials">
-			<span class="switch"></span>
-			<span class="label-text">Usar caracteres especiais (! * @)</span>
-		  </label>
+				<div class="box options-box">
+				  <label class="switch-label">
+					<input type="checkbox" id="useSpecials">
+					<span class="switch"></span>
+					<span class="label-text">Usar caracteres especiais (! * @)</span>
+				  </label>
 
-		  <label class="switch-label">
-			<input type="checkbox" id="useUpperLower" checked>
-			<span class="switch"></span>
-			<span class="label-text">Usar letras maiúsculas e minúsculas</span>
-		  </label>
+				  <label class="switch-label">
+					<input type="checkbox" id="useUpperLower" checked>
+					<span class="switch"></span>
+					<span class="label-text">Usar letras maiúsculas e minúsculas</span>
+				  </label>
 
-		  <label class="switch-label">
-			<input type="checkbox" id="noSeqRepeat">
-			<span class="switch"></span>
-			<span class="label-text">Não permitir números em sequência ou repetidos</span>
-		  </label>
+				  <label class="switch-label">
+					<input type="checkbox" id="noSeqRepeat">
+					<span class="switch"></span>
+					<span class="label-text">Não permitir números em sequência ou repetidos</span>
+				  </label>
+				</div>
+
+			  <button onclick="generatePassword()">Gerar Senha</button>
+
+			  <div class="box" style="margin-top:20px;">
+				<label><strong>Sua senha gerada:</strong></label>
+				<div class="inline">
+				  <input type="text" id="passwordOutput" readonly>
+				  <button onclick="copyPassword()">Copiar</button>
+				</div>
+			  </div>
+			</div>
 		</div>
-
-      <button onclick="generatePassword()">Gerar Senha</button>
-
-      <div class="box" style="margin-top:20px;">
-        <label><strong>Sua senha gerada:</strong></label>
-        <div class="inline">
-          <input type="text" id="passwordOutput" readonly>
-          <button onclick="copyPassword()">Copiar</button>
-        </div>
-      </div>
     </div>
   </div>
 

@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contato - UtiliDigital</title>
-  <meta name="description" content="Nossa Política de Privacidade" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | UtiliDigital</title>
+  <meta name="description" content="Artigos sobre segurança digital, produtividade e ferramentas online.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENPY20Q61N"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-ENPY20Q61N');
-	</script>
-
-  <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/style.css"> 
-
- 
 </head>
 <body>
-
   <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
-
-  <div style="display:flex;min-height:100vh;">
-	<button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
-
+  <div class="layout-wrapper">
+    <button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
 	<div class="sidebar" id="sidebar">
 	  <h3>Retornar</h3>
 	  <a href="index.html"><i class="fa-solid fa-house"></i>  Início</a>
@@ -47,24 +30,43 @@
 	  <a href="contato.html"><i class="fa-solid fa-envelope"></i>  Contato</a>
 	</div>
 
-        <main class="content" style="padding:32px;">
-      <div class="upload-page-wrapper">
-        <div class="upload-container" role="main" aria-labelledby="titulo">
-		  <h1>Contato</h1>
-		  <p>Entre em contato com a equipe da <strong>UtiliDigital</strong> através dos canais abaixo:</p>
-		  <ul>
-			<li>📧 E-mail: <a href="mailto:contato.utilidigital@gmail.com">contato.utilidigital@gmail.com</a></li>
-			<li>📢 Medium: <a href="https://medium.com/@knuckles.tyro" target="_blank">Nosso Medium</a></li>
-			<li>📰 Substack: <a href="https://knucklestyro.substack.com" target="_blank">Nosso Substack</a></li>
-			<li>📰 Facebook: <a href="https://www.facebook.com/profile.php?id=61580646930024" target="_blank">UtiliDigital - Facebook</a></li>
-		  </ul>
-		  <p>Responderemos o mais breve possível!</p>
-		  </div>
+    <main class="content" style="padding:32px;">
+	  <img src="images/logo-light.png" alt="Logo da UtiliDigital - Ferramentas Online" class="logo" id="logo">
+      <h1>Blog UtiliDigital</h1>
+      <p>Artigos sobre segurança digital, produtividade e ferramentas úteis para o seu dia a dia.</p>
+
+      <!-- Post 1 -->
+      <article class="post">
+
+        <h2><a href="./blog/set25/post-base64.html">Como usar o Conversor Base64 Online</a></h2>
+        <img src="./blog/images/base64.png" alt="Exemplo de conversão Base64" class="post-img-thumb">
+        <p>Entenda o que é Base64, por que ele é usado em sistemas e como converter arquivos em texto seguro...</p>
+        <a href="./blog/set25/post-base64.html" class="btn">Ler mais</a>
+
+        <div class="share">
+          <span>Compartilhar:</span>
+          <a href="https://wa.me/?text=Confira%20esse%20artigo%20sobre%20Base64%20na%20UtiliDigital:%20https://utilidigital.com.br/post-base64.html" target="_blank">WhatsApp</a> |
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://utilidigital.com.br/post-base64.html" target="_blank">Facebook</a> |
         </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post">
+        <h2><a href="./blog/set25/post-senhas.html">Por que usar Senhas Seguras?</a></h2>
+        <img src="./blog/images/password-secure.png" alt="Exemplo de senha forte" class="post-img-thumb">
+        <p>Saiba os riscos de senhas fracas e descubra como gerar combinações fortes e seguras com nossa ferramenta...</p>
+        <a href="./blog/set25/post-senhas.html" class="btn">Ler mais</a>
+
+        <div class="share">
+          <span>Compartilhar:</span>
+          <a href="https://wa.me/?text=Veja%20porque%20usar%20senhas%20seguras:%20https://utilidigital.com.br/post-senhas.html" target="_blank">WhatsApp</a> |
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://utilidigital.com.br/post-senhas.html" target="_blank">Facebook</a> |
+        </div>
+      </article>
     </main>
   </div>
 
- <footer class="footer">
+<footer class="footer">
   <div class="footer-container">
     <div class="footer-left">
       <p><strong>UtiliDigital</strong> - Ferramentas online gratuitas para o dia a dia.</p>
@@ -106,8 +108,10 @@ function addFavorite() {
   }
 }
 </script>
-
-
-
+  
+  
 </body>
 </html>
+
+
+

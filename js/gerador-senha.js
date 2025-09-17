@@ -1,6 +1,9 @@
-    function updateLengthLabel() {
-      document.getElementById("lengthLabel").innerText = document.getElementById("lengthRange").value;
-    }
+	function updateLengthLabel() {
+	  const lengthRange = document.getElementById("lengthRange");
+	  const lengthLabel = document.getElementById("lengthLabel");
+	  lengthLabel.textContent = lengthRange.value;
+	}
+
 
     function generatePassword() {
       const length = parseInt(document.getElementById("lengthRange").value);
@@ -50,3 +53,4 @@
       document.execCommand("copy");
       alert("Senha copiada!");
     }
+

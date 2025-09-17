@@ -43,9 +43,18 @@
   fileInfo.textContent = `Arquivo: ${file.name} — Tipo: ${file.type || 'n/a'} — Tamanho: ${formatBytes(file.size)}`;
   }
 
-  fileInput.addEventListener('change', () => {
-    handleFile(fileInput.files[0]);
-  });
+ 
+	const fileInput = document.getElementById('fileInput');
+	const fileName = document.getElementById('fileName');
+
+	fileInput.addEventListener('change', () => {
+	  if (fileInput.files.length > 0) {
+		fileName.textContent = fileInput.files[0].name;
+	  } else {
+		fileName.textContent = "Nenhum arquivo selecionado";
+	  }
+	});
+
 
   // Drag & drop
   dropZone.addEventListener('dragover', (e) => {
@@ -160,3 +169,6 @@
 
   resetUI();
 })();
+
+
+

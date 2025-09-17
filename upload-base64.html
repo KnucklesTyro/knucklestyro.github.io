@@ -104,6 +104,9 @@
 	  <a href="consulta-cpf-cnpj.html"><i class="fa-solid fa-id-card"></i>  Consulta CPF e CNPJ</a>
 	  <a href="upload-base64.html"><i class="fa-solid fa-file-code"></i>  Upload → Base64</a>
 	  <a href="gerador-senhas.html"><i class="fa-solid fa-key"></i>  Gerador de Senhas</a>
+	  
+	  <h3>Blog UtiliDigital</h3>
+      <a href="blog.html"><i class="fa-solid fa-blog"></i> Blog</a>
 
 	  <h3>Institucional</h3>
 	  <a href="politica-privacidade.html"><i class="fa-solid fa-shield-halved"></i>  Política de Privacidade</a>
@@ -117,7 +120,10 @@
 		  <img src="./images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
           <h1 id="titulo">Conversor de Arquivos para Base64 Online</h1>
 		  <h2>Para que serve o Base64?</h2>
-		  <p>O Base64 é um método de codificação que transforma arquivos e textos em uma representação segura para transmissão em sistemas, APIs e bancos de dados. Nosso conversor online facilita essa tarefa sem necessidade de instalar programas.</p>
+		  <p>O formato Base64 é muito utilizado em tecnologia para transformar arquivos, imagens e textos em uma sequência de caracteres alfanuméricos. Esse processo permite transmitir dados de maneira segura entre sistemas, especialmente em aplicações web, e-mails e APIs.<br/><br/>
+			Com nosso conversor online de arquivos para Base64, você pode fazer upload de documentos, fotos, PDFs ou qualquer outro tipo de arquivo e obter instantaneamente a versão codificada. O resultado pode ser usado em códigos HTML, CSS, JSON ou em integrações de sistemas que exigem esse formato.<br/><br/>
+			Além de simples e rápido, nosso conversor é totalmente seguro: nenhum arquivo é armazenado em servidores, garantindo privacidade total. Isso o torna ideal para programadores, designers e empresas que trabalham com desenvolvimento de software ou precisam inserir imagens codificadas em projetos web.<br/><br/>
+			👉 Experimente agora mesmo e transforme qualquer arquivo em Base64 de forma gratuita e prática.</p>
 
 		  
 		  <p class="small-muted">Arraste e solte um arquivo abaixo ou use o seletor tradicional. Escolha se deseja o Base64 completo ou apenas o corpo.<br>
@@ -125,13 +131,16 @@
 
           <div class="drop-zone" id="dropZone">Arraste e solte seu arquivo aqui</div>
 
-          <div class="upload-controls">
-            <input id="fileInput" type="file" />
-            <div class="controls-right">
-              <button id="convertBtn" class="btn" type="button">Converter</button>
-              <button id="clearBtn" class="btn" type="button">Limpar</button>
-            </div>
-          </div>
+		  <div class="upload-controls">
+		    <label for="fileInput" class="custom-file-label">📂 Escolher Arquivo</label>
+		    <input id="fileInput" type="file" />
+		    <span id="fileName">Nenhum arquivo selecionado</span>
+
+		    <div class="controls-right">
+		  	  <button id="convertBtn" class="btn" type="button">Converter</button>
+			  <button id="clearBtn" class="btn" type="button">Limpar</button>
+		    </div>
+		  </div>
 
           <fieldset style="margin:12px 0;">
             <legend>Formato do Base64:</legend>
