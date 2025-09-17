@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
 
-Sitemap: https://www.utilidigital.com.br/sitemap.xml
+Sitemap: http://www.utilidigital.com.br/sitemap.xml
