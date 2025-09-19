@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Política de Privacidade - UtiliDigital</title>
+  <meta name="description" content="Nossa Política de Privacidade" />
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+  	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENPY20Q61N"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-ENPY20Q61N');
+	</script>
+	
+  <style>
+    .upload-page-wrapper {
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      padding:24px;
+      justify-content:center;
+    }
+    .upload-container {
+      width:100%;
+      max-width:820px;
+      background:#fff;
+      padding:20px;
+      border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+    .drop-zone {
+      margin: 16px 0;
+      padding: 30px;
+      border: 2px dashed #888;
+      border-radius: 8px;
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .drop-zone.dragover {
+      background: #eef6ff;
+      border-color: #007bff;
+      color: #007bff;
+    }
+    .upload-controls {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-bottom:12px;
+    }
+    .file-info { margin-top:10px; color:#444; font-size:14px; }
+    .base64-output {
+      margin-top:14px;
+      width:100%;
+      min-height:180px;
+      max-height:420px;
+      overflow:auto;
+      background:#f7f7f8;
+      border:1px solid #e0e0e0;
+      padding:12px;
+      border-radius:6px;
+      font-family:monospace;
+      font-size:13px;
+      white-space:pre-wrap;
+      word-break:break-all;
+    }
+    .preview { margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; }
+    .preview img { max-width:240px; max-height:160px; border-radius:6px; border:1px solid #ddd; }
+    .small-muted { color:#666; font-size:13px; }
+    .controls-right { margin-left:auto; display:flex; gap:8px; }
+    @media (max-width:820px){
+      .upload-page-wrapper { padding:12px; }
+      .upload-container { padding:14px; }
+      .preview img { max-width:180px; max-height:140px; }
+    }
+	
+.content img.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 2px;
+}
+  </style>
+</head>
+<body>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
+
+
+  <div style="display:flex;min-height:100vh;">
+	<button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
+
+	<div class="sidebar" id="sidebar">
+	  <h3>Retornar</h3>
+	  <a href="../../index.html"><i class="fa-solid fa-house"></i>  Início</a>
+
+	  <h3>Ferramentas</h3>
+	  <a href="../../consulta-cpf-cnpj.html"><i class="fa-solid fa-id-card"></i>  Consulta CPF e CNPJ</a>
+	  <a href="../../upload-base64.html"><i class="fa-solid fa-file-code"></i>  Upload → Base64</a>
+	  <a href="../../gerador-senhas.html"><i class="fa-solid fa-key"></i>  Gerador de Senhas</a>
+	  
+	  <h3>Blog UtiliDigital</h3>
+      <a href="../../blog.html"><i class="fa-solid fa-blog"></i> Blog</a>
+
+	  <h3>Institucional</h3>
+	  <a href="../../politica-privacidade.html"><i class="fa-solid fa-shield-halved"></i>  Política de Privacidade</a>
+	  <a href="../../termos-uso.html"><i class="fa-solid fa-scale-balanced"></i>  Termos de Uso</a>
+	  <a href="../../contato.html"><i class="fa-solid fa-envelope"></i>  Contato</a>
+	</div>
+
+        <main class="content" style="padding:32px;">
+      <div class="upload-page-wrapper">
+        <div class="upload-container" role="main" aria-labelledby="titulo">
+			  <h1>CPF e CNPJ: qual a diferença e como consultar online</h1>
+			  
+			  <img src="../images/CPF-CNPJ.png" alt="CPF e CNPJ: qual a diferença e como consultar online na UtiliDigital" class="post-img">
+
+			  <p>O <strong>CPF</strong> e o <strong>CNPJ</strong> fazem parte do dia a dia de milhões de brasileiros, mas ainda geram dúvidas em muitas situações. Embora ambos sejam números de identificação, cada um tem uma função específica: o CPF é para pessoas físicas, enquanto o CNPJ é para empresas e organizações.</p>
+
+			  <p>Neste artigo, você vai entender as diferenças, quando cada documento é usado e como consultar essas informações de forma rápida e prática.</p>
+
+			  <h2>🔎 O que é o CPF?</h2>
+			  <p>O <strong>Cadastro de Pessoas Físicas (CPF)</strong> é um número único emitido pela Receita Federal para identificar cada cidadão brasileiro. Ele é essencial para:</p>
+			  <ul>
+				<li>Abrir contas bancárias</li>
+				<li>Declarar imposto de renda</li>
+				<li>Fazer compras parceladas</li>
+				<li>Participar de concursos públicos</li>
+				<li>Realizar operações financeiras em geral</li>
+			  </ul>
+			  <p>Em resumo, o CPF é a sua “identidade financeira” no Brasil.</p>
+
+			  <h2>🏢 O que é o CNPJ?</h2>
+			  <p>O <strong>Cadastro Nacional da Pessoa Jurídica (CNPJ)</strong> é o equivalente do CPF para empresas, organizações e instituições. Ele também é emitido pela Receita Federal e é usado para:</p>
+			  <ul>
+				<li>Emitir notas fiscais</li>
+				<li>Abrir contas bancárias empresariais</li>
+				<li>Participar de licitações</li>
+				<li>Formalizar contratos</li>
+				<li>Atuar legalmente no mercado</li>
+			  </ul>
+			  <p>Sem um CNPJ ativo, uma empresa não pode funcionar de forma regular no país.</p>
+
+			  <h2>⚖️ Principais diferenças entre CPF e CNPJ</h2>
+			  <table border="1" cellpadding="8" cellspacing="0" align="Center">
+				<tr>
+				  <th>Característica</th>
+				  <th>CPF</th>
+				  <th>CNPJ</th>
+				</tr>
+				<tr>
+				  <td>Quem recebe</td>
+				  <td>Pessoas físicas</td>
+				  <td>Empresas e organizações</td>
+				</tr>
+				<tr>
+				  <td>Quantidade de dígitos</td>
+				  <td>11</td>
+				  <td>14</td>
+				</tr>
+				<tr>
+				  <td>Emissor</td>
+				  <td>Receita Federal</td>
+				  <td>Receita Federal</td>
+				</tr>
+				<tr>
+				  <td>Finalidade</td>
+				  <td>Identificação de cidadãos</td>
+				  <td>Identificação de empresas</td>
+				</tr>
+			  </table>
+
+			  <h2>🌐 Como consultar CPF e CNPJ online</h2>
+			  <p>Hoje em dia, é possível verificar rapidamente a situação de um CPF ou CNPJ através de serviços digitais. Essas consultas podem trazer informações como:</p>
+			  <ul>
+				<li>Situação cadastral (regular, suspenso, cancelado, etc.)</li>
+				<li>Data de abertura (para CNPJs)</li>
+				<li>Nome ou razão social vinculada</li>
+			  </ul>
+
+			  <p>👉 Experimente nossa <a href="consulta-cpf-cnpj.html"><strong>ferramenta gratuita de Consulta CPF e CNPJ</strong></a> e tenha acesso imediato às informações.</p>
+
+			  <h2>✅ Conclusão</h2>
+			  <p>O CPF e o CNPJ são documentos fundamentais no Brasil, cada um com sua função específica. Enquanto o CPF garante a identidade financeira do cidadão, o CNPJ permite que empresas atuem legalmente no mercado.</p>
+
+			  <p>Com ferramentas online, ficou ainda mais fácil consultar esses dados de forma rápida e prática — seja para conferir a regularidade de um documento ou garantir mais segurança em transações.</p>
+
+			  <p><strong>📌 Dica final:</strong> sempre utilize fontes confiáveis ao realizar consultas. Nossa ferramenta online foi desenvolvida para trazer praticidade e segurança no acesso a essas informações.</p>
+		  </div>
+        </div>
+    </main>
+  </div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p><strong>UtiliDigital</strong> - Ferramentas online gratuitas para o dia a dia.</p>
+
+      <nav class="footer-links">
+        <a href="index.html">Início</a> |
+        <a href="consulta-cpf-cnpj.html">Validador CPF/CNPJ</a> |
+        <a href="base64.html">Conversor Base64</a> |
+        <a href="gerador-senha.html">Gerador de Senhas</a> |
+        <a href="politica-privacidade.html">Política de Privacidade</a> |
+        <a href="termos-uso.html">Termos de Uso</a> |
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+
+    <div class="footer-right">
+      <div class="favorites">
+        <button onclick="addFavorite()">⭐ Adicionar aos Favoritos</button>
+      </div>
+      <p class="copy">© 2025 UtiliDigital. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function addFavorite() {
+  const url = window.location.href;
+  const title = document.title;
+
+  if (window.external && ('AddFavorite' in window.external)) {
+    // IE antigo
+    window.external.AddFavorite(url, title);
+  } else if (window.sidebar && window.sidebar.addPanel) {
+    // Firefox antigo
+    window.sidebar.addPanel(title, url, "");
+  } else {
+    // Chrome, Edge, Firefox moderno, Safari → instruções
+    alert("Pressione CTRL+D (Windows) ou CMD+D (Mac) para adicionar este site aos favoritos.");
+  }
+}
+</script>
+
+
+
+</body>
+</html>
