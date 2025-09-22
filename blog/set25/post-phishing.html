@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>O que é Phishing e como se proteger?</title>
+  <meta name="description" content="O phishing pode parecer convincente, mas com atenção e boas práticas você evita cair em golpes e protege sua segurança digital." />
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+  	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENPY20Q61N"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-ENPY20Q61N');
+	</script>
+	
+  <style>
+    .upload-page-wrapper {
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      padding:24px;
+      justify-content:center;
+    }
+    .upload-container {
+      width:100%;
+      max-width:820px;
+      background:#fff;
+      padding:20px;
+      border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+    .drop-zone {
+      margin: 16px 0;
+      padding: 30px;
+      border: 2px dashed #888;
+      border-radius: 8px;
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .drop-zone.dragover {
+      background: #eef6ff;
+      border-color: #007bff;
+      color: #007bff;
+    }
+    .upload-controls {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-bottom:12px;
+    }
+    .file-info { margin-top:10px; color:#444; font-size:14px; }
+    .base64-output {
+      margin-top:14px;
+      width:100%;
+      min-height:180px;
+      max-height:420px;
+      overflow:auto;
+      background:#f7f7f8;
+      border:1px solid #e0e0e0;
+      padding:12px;
+      border-radius:6px;
+      font-family:monospace;
+      font-size:13px;
+      white-space:pre-wrap;
+      word-break:break-all;
+    }
+    .preview { margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; }
+    .preview img { max-width:240px; max-height:160px; border-radius:6px; border:1px solid #ddd; }
+    .small-muted { color:#666; font-size:13px; }
+    .controls-right { margin-left:auto; display:flex; gap:8px; }
+    @media (max-width:820px){
+      .upload-page-wrapper { padding:12px; }
+      .upload-container { padding:14px; }
+      .preview img { max-width:180px; max-height:140px; }
+    }
+	
+.content img.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 2px;
+}
+  </style>
+</head>
+<body>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
+
+
+  <div style="display:flex;min-height:100vh;">
+	<button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
+
+	<div class="sidebar" id="sidebar">
+	  <h3>Retornar</h3>
+	  <a href="../../index.html"><i class="fa-solid fa-house"></i>  Início</a>
+
+	  <h3>Ferramentas</h3>
+	  <a href="../../consulta-cpf-cnpj.html"><i class="fa-solid fa-id-card"></i>  Consulta CPF e CNPJ</a>
+	  <a href="../../upload-base64.html"><i class="fa-solid fa-file-code"></i>  Upload → Base64</a>
+	  <a href="../../gerador-senhas.html"><i class="fa-solid fa-key"></i>  Gerador de Senhas</a>
+	  
+	  <h3>Blog UtiliDigital</h3>
+      <a href="../../blog.html"><i class="fa-solid fa-blog"></i> Blog</a>
+
+	  <h3>Institucional</h3>
+	  <a href="../../politica-privacidade.html"><i class="fa-solid fa-shield-halved"></i>  Política de Privacidade</a>
+	  <a href="../../termos-uso.html"><i class="fa-solid fa-scale-balanced"></i>  Termos de Uso</a>
+	  <a href="../../contato.html"><i class="fa-solid fa-envelope"></i>  Contato</a>
+	</div>
+
+        <main class="content" style="padding:32px;">
+      <div class="upload-page-wrapper">
+        <div class="upload-container" role="main" aria-labelledby="titulo">
+			<h1>O que é Phishing e como se proteger?</h1>
+			<img src="../images/pishing.png" alt="Dicas de Segurança Digital" class="post-img">
+
+			<p>Na era digital, um dos golpes mais comuns é o <strong>phishing</strong>. Ele ocorre quando criminosos tentam enganar usuários para roubar informações pessoais, como senhas, números de cartão de crédito ou dados bancários.</p>
+
+			<h2>🎭 Como funciona o Phishing?</h2>
+			<p>Normalmente, os golpistas se passam por empresas confiáveis, enviando e-mails, mensagens ou até criando sites falsos que parecem reais. O objetivo é convencer a vítima a clicar em links maliciosos ou fornecer informações sigilosas.</p>
+
+			<h2>⚠️ Sinais de alerta</h2>
+			<ul>
+			  <li>Mensagens com <strong>erros de português</strong> ou formatação estranha.</li>
+			  <li>Links que direcionam para <strong>sites diferentes</strong> do oficial.</li>
+			  <li>Pedidos urgentes de atualização de senha ou confirmação de dados.</li>
+			  <li>Promessas de prêmios ou vantagens muito boas para serem verdade.</li>
+			</ul>
+
+			<h2>🛡️ Como se proteger?</h2>
+			<ul>
+			  <li>Sempre confira o <strong>endereço do site</strong> antes de inserir dados pessoais.</li>
+			  <li>Não clique em links suspeitos recebidos por e-mail ou mensagens.</li>
+			  <li>Ative a <strong>autenticação em duas etapas</strong> sempre que possível.</li>
+			  <li>Utilize <strong>antivírus e navegadores atualizados</strong>.</li>
+			</ul>
+
+			<p>O phishing pode parecer convincente, mas com atenção e boas práticas você evita cair em golpes e protege sua segurança digital.</p>
+
+			<p>🔗 Confira mais dicas no nosso blog: <a href="https://www.utilidigital.com.br/blog">www.utilidigital.com.br/blog</a></p>
+		  </div>
+        </div>
+    </main>
+  </div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p><strong>UtiliDigital</strong> - Ferramentas online gratuitas para o dia a dia.</p>
+
+      <nav class="footer-links">
+        <a href="index.html">Início</a> |
+        <a href="consulta-cpf-cnpj.html">Validador CPF/CNPJ</a> |
+        <a href="base64.html">Conversor Base64</a> |
+        <a href="gerador-senha.html">Gerador de Senhas</a> |
+        <a href="politica-privacidade.html">Política de Privacidade</a> |
+        <a href="termos-uso.html">Termos de Uso</a> |
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+
+    <div class="footer-right">
+      <div class="favorites">
+        <button onclick="addFavorite()">⭐ Adicionar aos Favoritos</button>
+      </div>
+      <p class="copy">© 2025 UtiliDigital. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function addFavorite() {
+  const url = window.location.href;
+  const title = document.title;
+
+  if (window.external && ('AddFavorite' in window.external)) {
+    // IE antigo
+    window.external.AddFavorite(url, title);
+  } else if (window.sidebar && window.sidebar.addPanel) {
+    // Firefox antigo
+    window.sidebar.addPanel(title, url, "");
+  } else {
+    // Chrome, Edge, Firefox moderno, Safari → instruções
+    alert("Pressione CTRL+D (Windows) ou CMD+D (Mac) para adicionar este site aos favoritos.");
+  }
+}
+</script>
+
+
+
+</body>
+</html>
