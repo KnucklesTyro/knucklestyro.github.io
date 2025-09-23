@@ -48,6 +48,21 @@
     <loc>https://www.utilidigital.com.br/blog/set25/post-dicas-seguranca-digital</loc>
     <priority>0.7</priority>
   </url>
+  
+  <url>
+    <loc>https://utilidigital.com.br/blog/set25/posts-criar-senhas</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.utilidigital.com.br/blog/set25/post-phishing</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.utilidigital.com.br/blog/set25/posts-2fa</loc>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Institucional -->
   
