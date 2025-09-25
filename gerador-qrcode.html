@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de QR Code Online | UtiliDigital</title>
+  <meta name="description" content="Crie QR Codes personalizados online. Escolha a cor, insira um logo e baixe em imagem PNG.">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script src="./js/gerador-qrcode.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
+
+  <div class="layout-wrapper">
+    <!-- Sidebar -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
+
+    <div class="sidebar" id="sidebar">
+      <h3>Retornar</h3>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+
+      <h3>Ferramentas</h3>
+      <a href="consulta-cpf-cnpj.html"><i class="fa-solid fa-id-card"></i> Consulta CPF e CNPJ</a>
+      <a href="upload-base64.html"><i class="fa-solid fa-file-code"></i> Upload → Base64</a>
+      <a href="gerador-senhas.html"><i class="fa-solid fa-key"></i> Gerador de Senhas</a>
+      <a href="gerador-qrcode.html"><i class="fa-solid fa-qrcode"></i> Gerador de QR Code</a>
+
+      <h3>Institucional</h3>
+      <a href="politica-privacidade.html"><i class="fa-solid fa-shield-halved"></i> Política de Privacidade</a>
+      <a href="termos-uso.html"><i class="fa-solid fa-scale-balanced"></i> Termos de Uso</a>
+      <a href="contato.html"><i class="fa-solid fa-envelope"></i> Contato</a>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+      <div class="cpf-page-wrapper">
+        <div class="cpf-container">
+          <img src="images/logo-light.png" alt="Logo UtiliDigital" class="logo" id="logo">
+          <h1>Gerador de QR Code Personalizado</h1>
+          <p>Crie <strong>QR Codes personalizados</strong> com cor e logo. Baixe em PNG e utilize onde precisar!</p>
+
+			  <!-- Texto explicativo mais detalhado -->
+			  <div class="details">
+				<p>
+				  Nosso gerador foi projetado para oferecer praticidade e personalização. Transforme qualquer URL, contato ou informação em um QR Code visualmente
+				  agradável e funcional — perfeito para cartões de visita, materiais de divulgação, cardápios digitais e campanhas.
+				</p>
+
+				<ul>
+				  <li><strong>Cores personalizadas:</strong> escolha entre várias opções para alinhar o QR Code à identidade visual da sua marca.</li>
+				  <li><strong>Logo central:</strong> insira uma imagem PNG para adicionar seu logotipo no centro do QR Code sem comprometer a leitura.</li>
+				  <li><strong>Download rápido:</strong> baixe o QR Code em PNG com qualidade e use em impressos ou mídias digitais.</li>
+				</ul>
+
+				<p>
+				  Fácil de usar, sem necessidade de cadastro. Experimente e gere QR Codes profissionais com apenas alguns cliques.
+				</p>
+			  </div>
+
+          <!-- Campo de texto -->
+          <div class="box">
+            <label for="qrText"><strong>Texto ou URL:</strong></label><br>
+            <input type="text" id="qrText" placeholder="Digite aqui seu link ou texto">
+          </div>
+
+          <!-- Escolha de cor -->
+          <div class="box">
+            <label><strong>Cor do QR Code:</strong></label><br>
+            <select id="qrColor">
+              <option value="#000000" selected>Preto</option>
+              <option value="#007BFF">Azul</option>
+              <option value="#DC3545">Vermelho</option>
+              <option value="#28A745">Verde</option>
+              <option value="#6F42C1">Roxo</option>
+              <option value="#FD7E14">Laranja</option>
+              <option value="#17A2B8">Ciano</option>
+              <option value="#E83E8C">Rosa</option>
+              <option value="#6C757D">Cinza</option>
+              <option value="#FFC107">Amarelo</option>
+              <option value="#343A40">Azul Escuro</option>
+              <option value="#20C997">Verde Claro</option>
+            </select>
+          </div>
+
+		  <!-- Upload de logo -->
+		  <div class="box">
+		    <label for="logoUpload"><strong>Logo (PNG):</strong></label><br>
+		    <input type="file" id="logoUpload" accept="image/png" style="display:none;" onchange="previewLogo(event)">
+		    <button onclick="document.getElementById('logoUpload').click()">📂 Escolher Logo</button>
+		    <div id="logoPreview" style="margin-top:10px;"></div>
+		  </div>
+
+          <!-- Botão gerar -->
+          <button onclick="generateQRCode()">Gerar QR Code</button>
+
+          <!-- QR gerado -->
+          <div id="qrcode" style="margin:20px 0;" align="Center"></div>
+
+          <!-- Botão salvar -->
+          <button id="downloadBtn" style="display:none;" onclick="downloadQRCode()">Baixar QR Code</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p><strong>UtiliDigital</strong> - Ferramentas online gratuitas para o dia a dia.</p>
+        <nav class="footer-links">
+          <a href="index.html">Início</a> |
+          <a href="consulta-cpf-cnpj.html">Validador CPF/CNPJ</a> |
+          <a href="upload-base64.html">Conversor Base64</a> |
+          <a href="gerador-senhas.html">Gerador de Senhas</a> |
+          <a href="gerador-qrcode.html">Gerador de QR Code</a> |
+          <a href="politica-privacidade.html">Política de Privacidade</a> |
+          <a href="termos-uso.html">Termos de Uso</a> |
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+      <div class="footer-right">
+        <div class="favorites">
+          <button onclick="addFavorite()">⭐ Adicionar aos Favoritos</button>
+        </div>
+        <p class="copy">© 2025 UtiliDigital. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>
