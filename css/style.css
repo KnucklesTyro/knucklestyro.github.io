@@ -201,7 +201,7 @@ body.dark .content img.logo {
 .sidebar {
   background: #e6f4ff;
   padding: 20px;
-  width: 220px;
+  width: 255px;
   min-height: 100vh;
   box-shadow: 2px 0 6px rgba(0,0,0,0.1);
   position: fixed;
