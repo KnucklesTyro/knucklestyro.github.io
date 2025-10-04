@@ -201,7 +201,7 @@ body.dark .content img.logo {
 .sidebar {
   background: #e6f4ff;
   padding: 20px;
-  width: 305px;
+  width: 315px;
   min-height: 100vh;
   box-shadow: 2px 0 6px rgba(0,0,0,0.1);
   position: fixed;
@@ -250,7 +250,7 @@ body.dark .content img.logo {
 
 /* Layout principal */
 main, footer {
-  margin-left: 305px; /* espaço pro sidebar */
+  margin-left: 315px; /* espaço pro sidebar */
   padding: 10px;
   transition: margin-left 0.3s ease;
 }
