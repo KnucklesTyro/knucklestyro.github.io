@@ -250,8 +250,8 @@ body.dark .content img.logo {
 
 /* Layout principal */
 main, footer {
-  margin-left: 220px; /* espaço pro sidebar */
-  padding: 20px;
+  margin-left: 255px; /* espaço pro sidebar */
+  padding: 10px;
   transition: margin-left 0.3s ease;
 }
 
