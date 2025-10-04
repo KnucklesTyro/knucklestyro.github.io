@@ -70,6 +70,10 @@ body:has(.sidebar) {
 /* Sidebar no modo escuro */
 body.dark .sidebar {
   background-color: #1e2a38; /* tom escuro para combinar */
+  height: 100vh;          /* ocupa a altura inteira da tela */
+  overflow-y: auto;       /* ativa a rolagem vertical quando necessário */
+  overflow-x: hidden;     /* evita barra de rolagem horizontal */
+
 }
 body.dark .sidebar a { color: #66b2ff; } /* links em azul claro */
 
@@ -205,6 +209,9 @@ body.dark .content img.logo {
   left: 0;
   overflow-y: auto;
   transition: transform 0.3s ease;
+  height: 100vh;          /* ocupa a altura inteira da tela */
+  overflow-y: auto;       /* ativa a rolagem vertical quando necessário */
+  overflow-x: hidden;     /* evita barra de rolagem horizontal */
 }
 
 .sidebar h3 {
