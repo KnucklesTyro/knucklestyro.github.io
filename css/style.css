@@ -195,7 +195,99 @@ body.dark .content img.logo {
     margin-bottom: 2px;
 }
 
+/* Estilo geral blog */
+   .blog-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
 
+    .month-header {
+      cursor: pointer;
+      background: #f4f4f4;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.3s;
+    }
+
+    .month-header:hover {
+      background: #e8e8e8;
+    }
+
+    .month-posts {
+      display: none;
+      margin-bottom: 20px;
+      padding-left: 8px;
+      border-left: 3px solid #ccc;
+    }
+
+    .month-posts.active {
+      display: block;
+    }
+
+    .post-card {
+      background: #fafafa;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      margin: 10px 0;
+      transition: transform 0.2s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .post-card h3 {
+      margin: 0;
+    }
+
+    .post-card p {
+      color: #555;
+      font-size: 14px;
+	  text-align: left;
+    }
+
+    .toggle-icon {
+      font-size: 14px;
+      transition: transform 0.3s;
+    }
+
+    .month-header.active .toggle-icon {
+      transform: rotate(90deg);
+    }
+
+body.dark .blog-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #777;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+
+body.dark .month-header {
+      cursor: pointer;
+      background: #f4f4f4;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-bottom: 8px;
+	  color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.3s;
+    }
 
 /* Estilo geral do sidebar */
 .sidebar {

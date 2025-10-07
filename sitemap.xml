@@ -73,6 +73,11 @@
     <loc>https://www.utilidigital.com.br/blog/out25/post-oquee-qrcode</loc>
     <priority>0.7</priority>
   </url>
+  
+  <url>
+    <loc>https://www.utilidigital.com.br/blog/out25/post-qrcode-com-logo</loc>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Institucional -->
   
