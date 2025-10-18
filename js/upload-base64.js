@@ -49,9 +49,12 @@
 
 	fileInput.addEventListener('change', () => {
 	  if (fileInput.files.length > 0) {
-		fileName.textContent = fileInput.files[0].name;
+		const file = fileInput.files[0];
+		fileName.textContent = file.name;
+		handleFile(file); // 🔹 garante que selectedFile é definido
 	  } else {
 		fileName.textContent = "Nenhum arquivo selecionado";
+		selectedFile = null;
 	  }
 	});
 
