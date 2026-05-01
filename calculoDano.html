@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora RPG</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 20px;
+    }
+    .container {
+        max-width: 400px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    input {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 10px;
+    }
+    .resultado {
+        background: #eee;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>⚔️ Calculadora RPG</h2>
+
+    <label>Força</label>
+    <input type="number" id="forca" value="0">
+
+    <label>Precisão</label>
+    <input type="number" id="precisao" value="0">
+
+    <label>Energia</label>
+    <input type="number" id="energia" value="0">
+
+    <label>Velocidade</label>
+    <input type="number" id="velocidade" value="0">
+
+    <label>Vitalidade</label>
+    <input type="number" id="vitalidade" value="0">
+
+    <label>Magia</label>
+    <input type="number" id="magia" value="0">
+
+    <label>Dano da Arma</label>
+    <input type="number" id="arma" value="0">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div class="resultado" id="resultado"></div>
+</div>
+
+<script>
+function calcular() {
+    let forca = parseInt(document.getElementById("forca").value) || 0;
+    let precisao = parseInt(document.getElementById("precisao").value) || 0;
+    let energia = parseInt(document.getElementById("energia").value) || 0;
+    let velocidade = parseInt(document.getElementById("velocidade").value) || 0;
+    let vitalidade = parseInt(document.getElementById("vitalidade").value) || 0;
+    let magia = parseInt(document.getElementById("magia").value) || 0;
+    let arma = parseInt(document.getElementById("arma").value) || 0;
+
+    let vida = 20 + (vitalidade * 5);
+    let energiaTotal = 10 + (energia * 3);
+    let defesa = 10 + velocidade;
+
+    let ataque = "1d20 + " + precisao;
+    let danoFisico = arma + forca;
+    let danoMagico = arma + magia;
+
+    document.getElementById("resultado").innerHTML = `
+        <strong>❤️ Vida:</strong> ${vida}<br>
+        <strong>🔋 Energia:</strong> ${energiaTotal}<br>
+        <strong>🛡️ Defesa:</strong> ${defesa}<br>
+        <strong>🎯 Ataque:</strong> ${ataque}<br>
+        <strong>⚔️ Dano Físico:</strong> ${danoFisico}<br>
+        <strong>🔮 Dano Mágico:</strong> ${danoMagico}
+    `;
+}
+</script>
+
+</body>
+</html>
